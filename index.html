@@ -236,6 +236,63 @@
       .socials a {
         font-size: 1.2rem;
         color: #027ffc;
+
+        /* Styles specifically for very small screens (e.g., phones <480px) */
+        @media (max-width: 480px) {
+          body {
+            padding: 0 5px; /* Add slight padding for mobile */
+          }
+
+          header h1 {
+            font-size: 1.8rem; /* Reduce header size for small screens */
+          }
+
+          header p {
+            font-size: 0.9rem; /* Make text readable */
+          }
+
+          .resume-button {
+            font-size: 0.8rem; /* Reduce button text size */
+            padding: 8px 16px; /* Adjust padding for smaller buttons */
+          }
+
+          /* About Section */
+          .about-container {
+            flex-direction: column; /* Stack content vertically */
+            text-align: center; /* Center text */
+          }
+
+          .about-photo {
+            width: 100%; /* Take up full width of the screen */
+            height: auto; /* Maintain aspect ratio */
+            margin-bottom: 15px; /* Add spacing below the image */
+          }
+
+          .about-text {
+            font-size: 0.95rem; /* Slightly smaller text */
+          }
+
+          /* Design Focuses Section */
+          .focus-container {
+            flex-direction: column; /* Stack focus boxes vertically */
+          }
+
+          .focus-container div {
+            width: 100%; /* Ensure the content fits the screen */
+            margin-bottom: 15px; /* Add spacing between boxes */
+          }
+
+          /* Gallery Images */
+          .work-images img {
+            width: 100%; /* Images scale to fit screen width */
+            height: auto; /* Keep proportions */
+          }
+
+          /* Footer Social Links */
+          .socials {
+            flex-direction: column; /* Stack links vertically */
+            gap: 5px; /* Add space between links */
+          }
       }
     </style>
   </head>
