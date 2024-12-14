@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Lethabo Semenya | Graphic Designer & Portfolio</title>
+
     <!-- Apple Touch Icon -->
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
 
@@ -15,13 +16,166 @@
     
     <!-- Web Manifest file -->
     <link rel="manifest" href="site.webmanifest">
+    
 </head>
     <style>
+      .workshops-button {
+  position: absolute;
+  top: 400px;
+  left: 70%;
+  transform: translateX(-50%);
+  background-color: #f5109d;
+  color: white;
+  padding: 12px 30px;
+  font-size: 1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  border-radius: 50px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.3s ease;
+}
+
+.workshops-button:hover {
+  background-color: #ff4081;
+}
+
+      
+    /* Changing Background Animation */
+@keyframes backgroundChange {
+  0% { background: #ff4081; }
+  25% { background: #ffea00; }
+  50% { background: #00bcd4; }
+  75% { background: #8e24aa; }
+  100% { background: #ff4081; }
+}
+
+body {
+  animation: backgroundChange 10s infinite alternate;
+}
+
+      header h1 {
+        font-size: 3.0rem;
+        font-weight: 500;
+        text-transform: uppercase;
+        margin: 0;
+        letter-spacing: 2px;
+        animation: glow 2s infinite ease-in-out;
+      }
+
+      header p {
+        font-size: 1.2rem;
+        font-family: "Georgia", "Times New Roman", serif;
+        color: #ffffff;
+        text-align: center;
+        max-width: 600px;
+        margin: 20px auto;
+        line-height: 1.8;
+      }
+
+      header p em {
+        font-style: italic;
+        color: #ee1eb7;
+        font-weight: bold;
+      }
+
+      .resume-button {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        background-color: #fe0697;
+        color: white;
+        padding: 12px 30px;
+        font-size: 1rem;
+        font-weight: bold;
+        text-transform: uppercase;
+        border-radius: 50px;
+        text-align: center;
+        box-shadow: 0 4px 10px rgba(255, 255, 255, 0.3);
+        transition: all 0.3s ease;
+      }
+
+      .resume-button:hover {
+        background-color: #d5006c;
+        box-shadow: 0 6px 15px rgba(248, 243, 243, 0.4);
+      }
+
+      /* Section Styling */
+      section {
+        padding: 60px 20px;
+        text-align: center;
+        background-color: rgb(243, 234, 234);
+      }
+
+      section h2 {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+        font-weight: bold;
+        text-transform: uppercase;
+        color: #060606;
+        text-align: center;
+      }
+
+      section p {
+        max-width: 700px;
+        margin: 0 auto;
+        font-size: 1.2rem;
+        line-height: 1.6;
+        color: #121212;
+      }
+
+      /* About Section */
+      .about-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+        max-width: 900px;
+        margin: 40px auto;
+        text-align: left;
+      }
+
+      .about-photo {
+        width: 400px;
+        height: 400px;
+        object-fit: cover;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      }
+
+
+      .about-text {
+        font-size: 1.2rem;
+        line-height: 1.6;
+        background-color: #ffffff;
+        border-radius: 10px; /* Rounded corners */
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow for a lifted effect */
+        line-height: 1.6;
+      }
+
+      /* Responsive Design for Phones */
+      @media (max-width: 480px) {
+        .about-container {
+          flex-direction: column; /* Stack content vertically on mobile */
+          text-align: center; /* Center the text */
+        }
+
+        .about-photo {
+          width: 100%; /* Make the image take up full width */
+          height: auto; /* Maintain the aspect ratio */
+          margin-bottom: 15px; /* Add spacing below the image */
+        }
+
+        .about-text {
+          font-size: 1rem; /* Slightly smaller text for readability */
+          padding: 20px; /* Add padding for better spacing */
+        }
+      }
+
       /* General Styles */
       body {
         margin: 0;
         font-family: "Poppins", sans-serif;
-        background: #f8f9fa;
+        background: #febcee;
         color: #ffffff;
         scroll-behavior: smooth;
       }
@@ -141,6 +295,7 @@
         color: #121212;
       }
 
+
       /* About Section */
       .about-container {
         display: flex;
@@ -161,12 +316,39 @@
       }
 
       .about-text {
-        font-size: 1.2rem;
-        line-height: 1.6;
-        background-color: #FFFFFF 
+        font-size: 1.0rem;
+        line-height: 1.0;
+        background-color: #f47ac1;
         border-radius: 10px; /* Rounded corners */
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow for a lifted effect */
-        line-height: 1.6;
+        line-height: 1.0;
+      }
+
+      /* New Skills Section */
+      .skills-container {
+        margin-top: 40px;
+        text-align: center;
+      }
+
+      .skills-container h3 {
+        font-size: 2rem;
+        color: #060606;
+      }
+
+      .skills-list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+        font-size: 1.1rem;
+      }
+
+      .skills-list li {
+        background-color: #fe0697;
+        color: rgb(7, 7, 7);
+        padding: 10px 20px;
+        border-radius: 20px;
+        font-weight: bold;
       }
 
       /* Design Focuses Section */
@@ -252,66 +434,68 @@
       .socials a {
         font-size: 1.2rem;
         color: #027ffc;
-
-        /* Styles specifically for very small screens (e.g., phones <480px) */
-        @media (max-width: 480px) {
-          body {
-            padding: 0 5px; /* Add slight padding for mobile */
-          }
-
-          header h1 {
-            font-size: 1.8rem; /* Reduce header size for small screens */
-          }
-
-          header p {
-            font-size: 0.9rem; /* Make text readable */
-          }
-
-          .resume-button {
-            font-size: 0.8rem; /* Reduce button text size */
-            padding: 8px 16px; /* Adjust padding for smaller buttons */
-          }
-
-          /* About Section */
-          .about-container {
-            flex-direction: column; /* Stack content vertically */
-            text-align: center; /* Center text */
-          }
-
-          .about-photo {
-            width: 100%; /* Take up full width of the screen */
-            height: auto; /* Maintain aspect ratio */
-            margin-bottom: 15px; /* Add spacing below the image */
-          }
-
-          .about-text {
-            font-size: 0.95rem; /* Slightly smaller text */
-          }
-
-          /* Design Focuses Section */
-          .focus-container {
-            flex-direction: column; /* Stack focus boxes vertically */
-          }
-
-          .focus-container div {
-            width: 100%; /* Ensure the content fits the screen */
-            margin-bottom: 15px; /* Add spacing between boxes */
-          }
-
-          /* Gallery Images */
-          .work-images img {
-            width: 100%; /* Images scale to fit screen width */
-            height: auto; /* Keep proportions */
-          }
-
-          /* Footer Social Links */
-          .socials {
-            flex-direction: column; /* Stack links vertically */
-            gap: 5px; /* Add space between links */
-          }
       }
+      /* General Styles */
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background: #f8f9fa;
+  color: #ffffff;
+  scroll-behavior: smooth;
+}
+
+/* About Section */
+.about-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  max-width: 900px;
+  margin: 40px auto;
+  text-align: left;
+}
+
+.about-photo {
+  width: 400px;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.about-text {
+  font-size: 1.0rem;
+  line-height: 1.0;
+  background-color: #ff8fdd;
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 4px 10px rgba(241, 239, 240, 0.1); /* Soft shadow for a lifted effect */
+  line-height: 1.0;
+  color: #ffffff;
+}
+
+/* Responsive Design for Phones */
+@media (max-width: 480px) {
+  .about-container {
+    flex-direction: column; /* Stack content vertically on mobile */
+    text-align: center; /* Center the text */
+  }
+
+  .about-photo {
+    width: 100%; /* Make the image take up full width */
+    height: auto; /* Maintain the aspect ratio */
+    margin-bottom: 15px; /* Add spacing below the image */
+  }
+
+  .about-text {
+    font-size: 1rem; /* Slightly smaller text for readability */
+    padding: 20px; /* Add padding for better spacing */
+  }
+}
+
     </style>
   </head>
+            <a href="workshops.html" class="workshops-button">Check Out My Workshops & Certificates
+</a>
   <body>
     <header>
       <video autoplay muted loop>
@@ -325,58 +509,53 @@
         <em>Hire me!</em>
       </p>
       <a href="Lethabo Semenya Cv.pdf" class="resume-button" download
-        >Download Resume</a
-      >
+        >Download Resume</a >
     </header>
-
+    <!-- About Section -->
     <section id="about">
       <h2>About Me</h2>
       <div class="about-container">
         <img src="image7.png" alt="Lethabo Semenya" class="about-photo" />
-      <div class="about-text">
-  <p>
-    👩‍💻💥 Hey, I'm Lethabo Semenya, a Graphic Designer and Project Manager with 3+ years of experience bringing creative visions to life. 
-    I specialize in branding, digital content, and marketing materials, and I’m all about delivering designs that make an impact.
-  </p>
-<br>
-  <p>
-    🎓 Graphic Design Diploma – Alison (2023) 🎓 SheCodes – Coding Basics (HTML, CSS, JavaScript) 🎨 Skilled with Adobe Creative Suite, 
-    Sketch, Figma, and Blender. 💻 Passionate about web design and digital marketing.
-  </p>
-<br>
-  <p>
-    I’ve worked with everyone from small businesses to construction companies, always ensuring top-notch results. 
-    Let’s collaborate and create something extraordinary! I’m committed to delivering high-quality design solutions that elevate brands and engage audiences.
-  </p>
-</div>
- </section>
+        <div class="about-text">
+          <p>👩‍💻💥 Hey, I'm Lethabo Semenya, a Graphic Designer and Project Manager with 3+ years of experience bringing creative visions to life. I specialize in branding, digital content, and marketing materials, and I’m all about delivering designs that make an impact.</p>
+          <p>🎓 Graphic Design Diploma – Alison (2023) 🎓 SheCodes – Coding Basics (HTML, CSS, JavaScript) 🎨 Skilled with Adobe Creative Suite, Sketch, Figma, and Blender. 💻 Passionate about web design and digital marketing.</p>
+          <p>I’ve worked with everyone from small businesses to construction companies, always ensuring top-notch results. Let’s collaborate and create something extraordinary! I’m committed to delivering high-quality design solutions that elevate brands and engage audiences.</p>
+        </div>
+      </div>
+    </section>
 
+    <!-- New Skills Section -->
+    <section id="skills">
+      <h3>My Skills</h3>
+      <ul class="skills-list">
+        <li>Graphic Design (Adobe Suite, Canva, Figma)</li>
+        <li>Web Development (HTML, CSS, JavaScript)</li>
+        <li>UI/UX Design</li>
+        <li>Software Testing (Manual & Automation)</li>
+        <li>Java Programming</li>
+        <li>Git & GitHub</li>
+        <li>Netlify Hosting</li>
+      </ul>
+    </section>
+
+    <!-- Design Focuses Section -->
     <section id="design-focuses">
       <h2>Design Focuses</h2>
       <div class="focus-container">
         <div>
           <img src="image2.jpg" alt="Print Design" />
           <h3>Print</h3>
-          <p>
-            Expert in crafting sleek, professional print designs that are
-            perfectly tailored to every client’s vision.
-          </p>
+          <p>Expert in crafting sleek, professional print designs that are perfectly tailored to every client’s vision.</p>
         </div>
         <div>
           <img src="work2.png" alt="Branding Design" />
           <h3>Branding</h3>
-          <p>
-            Designing bold, memorable brand identities that truly connect with
-            audiences.
-          </p>
+          <p>Designing bold, memorable brand identities that truly connect with audiences.</p>
         </div>
         <div>
           <img src="image4.jpg" alt="Illustration Design" />
           <h3>Illustration</h3>
-          <p>
-            Bringing ideas to life with vibrant and expressive illustrations for
-            various media.
-          </p>
+          <p>Bringing ideas to life with vibrant and expressive illustrations for various media.</p>
         </div>
       </div>
     </section>
@@ -393,33 +572,21 @@
     <section id="testimonials">
       <h2>Client Testimonials</h2>
       <div class="testimonial">
-        <blockquote>
-          "Absolutely fulfilling project collaboration. Lethabo turned all our
-          ideas into beautiful visual tools with vibrant enthusiasm."
-        </blockquote>
-        <p>
-          - Kirstern Katlego - Dikatlego Engineering-
-          info@dikatlegoengineering.co.za
-        </p>
+        <blockquote>"Absolutely fulfilling project collaboration. Lethabo turned all our ideas into beautiful visual tools with vibrant enthusiasm."</blockquote>
+        <p>- Kirstern Katlego - Dikatlego Engineering- info@dikatlegoengineering.co.za</p>
       </div>
       <div class="testimonial">
-        <blockquote>
-          "Lethabo's grasp of digital art is truly inspiring. You'll surely
-          learn a lot during the project process."
-        </blockquote>
+        <blockquote>"Lethabo's grasp of digital art is truly inspiring. You'll surely learn a lot during the project process."</blockquote>
         <p>- Nomvula M- Khanani Developers</p>
       </div>
     </section>
 
     <section id="contact-info">
       <h2>Contact Me</h2>
-      <p>
-        Let’s connect and turn ideas into powerful visual art that leaves an
-        impression.
-      </p>
+      <p>Let’s connect and turn ideas into powerful visual art that leaves an impression.</p>
       <br />
       <p><strong>Phone:</strong> 071 699 2698</p>
-      <p><strong>Email:</strong>lethabosemenya13@gmail.com</p>
+      <p><strong>Email:</strong> lethabosemenya13@gmail.com</p>
     </section>
 
     <footer>
