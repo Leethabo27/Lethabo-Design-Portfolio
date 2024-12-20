@@ -13,7 +13,7 @@
     <link rel="icon" type="image/png" sizes="192x192" href="android-chrome-192x192.png">
     <link rel="icon" type="image/png" sizes="512x512" href="android-chrome-512x512.png">
     
-    <!-- Web Manifest file -->
+    <!-- Web Manifest file -->  
     <link rel="manifest" href="site.webmanifest">
     
 </head>
@@ -25,7 +25,7 @@
 
 .workshops-button {
   display: inline-block; /* Ensures proper alignment */
-  background-color: #f5109d;
+  background-color: #080808;
   color: white;
   padding: 12px 30px;
   font-size: 1rem;
@@ -47,12 +47,12 @@
   0% { background: #080808; }
   25% { background: #0a0a0a; }
   50% { background: #080005; }
-  75% { background: #ff88bf; }
+  75% { background: #080808; }
   100% { background: #fa0355; }
 }
 
 body {
-  animation: backgroundChange 10s infinite alternate;
+  animation: backgroundChange 30s infinite alternate;
 }
 
       header h1 {
@@ -61,7 +61,7 @@ body {
         text-transform: uppercase;
         margin: 0;
         letter-spacing: 2px;
-        animation: glow 2s infinite ease-in-out;
+        animation: glow 10s infinite ease-in-out;
       }
 
       header p {
@@ -222,12 +222,84 @@ body {
         transform: translateY(0);
       }
     }
+   
+  body {
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+    background: #f0f0f0; /* Light gray background */
+    color: #333; /* Darker text color for readability */
+    scroll-behavior: smooth;
+  }
+
+  header {
+    text-align: center;
+    padding: 100px 20px;
+    background: #0e0d0d; /* Pink background for header */
+    color: #fff;
+  }
+
+  header h1 {
+    font-size: 3.5rem;
+    font-weight: 800;
+    letter-spacing: 3px;
+  }
+
+  header p {
+    font-size: 1.2rem;
+    color: #fff;
+    max-width: 600px;
+    margin: 20px auto;
+    line-height: 1.8;
+  }
+
+  .about-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    max-width: 900px;
+    margin: 40px auto;
+  }
+
+  .about-photo {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  }
+
+  .about-text {
+    font-size: 1rem;
+    background-color: #fff; /* White background for text box */
+    color: #333;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Hover button effect */
+  .workshops-button:hover {
+    background-color: #ff65b3;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  }
+
+  /* Media Query for Small Screens */
+  @media (max-width: 768px) {
+    header h1 {
+      font-size: 2.5rem;
+    }
+
+    .about-container {
+      flex-direction: column;
+      text-align: center;
+    }
+  }
+
 
     /* General Styles */
     body {
       margin: 0;
       font-family: "Poppins", sans-serif;
-      background: #febcee;
+      background: #ffffff;
       color: #ffffff;
       scroll-behavior: smooth;
     }
@@ -276,7 +348,7 @@ body {
       body {
         margin: 0;
         font-family: "Poppins", sans-serif;
-        background: #febcee;
+        background: #ffffff;
         color: #ffffff;
         scroll-behavior: smooth;
       }
@@ -302,16 +374,16 @@ body {
       /* Glow Animation */
       @keyframes glow {
         0% {
-          text-shadow: 0 0 10px #ff4081, 0 0 20px #ff4081, 0 0 30px #ff4081,
-            0 0 40px #d5006c, 0 0 50px #d5006c;
+          text-shadow: 0 0 10px #fc04a9, 0 0 20px #ecd4e2, 0 0 30px #f8e3f1,
+            0 0 40px #ff03ab, 0 0 50px #f5c7e3;
         }
         50% {
-          text-shadow: 0 0 20px #ff4081, 0 0 30px #ff4081, 0 0 40px #ff4081,
-            0 0 50px #d5006c, 0 0 60px #d5006c;
+          text-shadow: 0 0 20px #ff00b3, 0 0 30px #ff03dd, 0 0 40px #ff0559,
+            0 0 50px #ff00b3, 0 0 60px #fa06a9;
         }
         100% {
-          text-shadow: 0 0 10px #ff4081, 0 0 20px #ff4081, 0 0 30px #ff4081,
-            0 0 40px #ff0884, 0 0 50px #ff0582;
+          text-shadow: 0 0 10px #ff00c8, 0 0 20px #f00990, 0 0 30px #ff05ac,
+            0 0 40px #ff0884, 0 0 50px #ff029e;
         }
       }
 
@@ -336,7 +408,7 @@ body {
 
       header p em {
         font-style: italic;
-        color: #ee1eb7;
+        color: #fcf8fb;
         font-weight: bold;
       }
 
@@ -344,8 +416,8 @@ body {
         position: absolute;
         top: 20px;
         right: 20px;
-        background-color: #fe0697;
-        color: white;
+        background-color: #fd08b4;
+        color: rgb(252, 247, 250);
         padding: 12px 30px;
         font-size: 1rem;
         font-weight: bold;
@@ -357,7 +429,7 @@ body {
       }
 
       .resume-button:hover {
-        background-color: #d5006c;
+        background-color: #0e0d0d;
         box-shadow: 0 6px 15px rgba(248, 243, 243, 0.4);
       }
 
@@ -435,7 +507,7 @@ body {
       }
 
       .skills-list li {
-        background-color: #fe0697;
+        background-color: #070707;
         color: rgb(255, 253, 253);
         padding: 10px 20px;
         border-radius: 20px;
@@ -457,7 +529,7 @@ body {
         max-width: 300px;
         text-align: center;
         padding: 20px;
-        background-color: #fa0cc3;
+        background-color: #ff016b;
         box-shadow: 0 4px 10px rgb(246, 243, 245);
         border-radius: 10px;
       }
@@ -531,7 +603,7 @@ body {
   margin: 0;
   font-family: "Poppins", sans-serif;
   background: #f8f9fa;
-  color: #ffffff;
+  color: #0e0d0d;
   scroll-behavior: smooth;
 }
 
@@ -557,7 +629,7 @@ body {
 .about-text {
   font-size: 1.0rem;
   line-height: 1.0;
-  background-color: #fa07b1;
+  background-color: #0c0c0c;
   border-radius: 10px; /* Rounded corners */
   box-shadow: 0 4px 10px rgba(241, 239, 240, 0.1); /* Soft shadow for a lifted effect */
   line-height: 1.0;
@@ -663,11 +735,7 @@ footer {
   </div>
 </div>
     </div>
-      <p>
-        Design is more than what meets the eye; it's the silent language of
-        emotion, intention, and vision. <br />
-        <em>Hire me!</em>
-      </p>
+
       <a href="Lethabo Semenya Cv.pdf" class="resume-button" download
         >Download Resume</a >
     </header>
