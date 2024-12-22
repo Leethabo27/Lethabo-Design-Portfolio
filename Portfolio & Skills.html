@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Portfolio of Lethabo Semenya showcasing projects, skills, tools, certificates, and more."
+    />
+    <meta
+      name="keywords"
+      content="Graphic Design, Frontend Developer, Portfolio, Lethabo Semenya, Skills, Projects, Certificates"
+    />
+    <meta name="author" content="Lethabo Semenya" />
+    <title>Projects & Skills - Lethabo Semenya</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: "Roboto", sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #000;
+        color: #fff;
+      }
+
+      header {
+        text-align: center;
+        padding: 20px;
+        background-color: rgba(255, 5, 109, 0.8);
+      }
+
+      header h1 {
+        font-family: "Playfair Display", serif;
+        font-size: 2.5rem;
+        margin: 0;
+      }
+
+      nav {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        background-color: #222;
+        padding: 10px;
+      }
+
+      nav a {
+        text-decoration: none;
+        color: #fff;
+        font-weight: bold;
+        font-size: 1rem;
+      }
+
+      nav a:hover {
+        color: #ff0055;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: auto;
+        padding: 20px;
+      }
+
+      section {
+        margin-bottom: 40px;
+      }
+
+      h2 {
+        font-family: "Playfair Display", serif;
+        font-size: 2rem;
+        text-align: center;
+        margin-bottom: 20px;
+        color: #ff0055;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+      }
+
+      .grid img {
+        width: 100%;
+        border-radius: 10px;
+        transition: transform 0.3s ease;
+      }
+
+      .grid img:hover {
+        transform: scale(1.05);
+      }
+
+      .video-wrapper {
+        position: relative;
+        overflow: hidden;
+        border-radius: 10px;
+      }
+
+      .video-wrapper video {
+        width: 100%;
+        border-radius: 10px;
+      }
+
+      footer {
+        text-align: center;
+        padding: 10px;
+        background-color: #222;
+        color: #fff;
+      }
+
+      @media (max-width: 768px) {
+        h2 {
+          font-size: 1.5rem;
+        }
+      }
+
+      .skills-list {
+        margin-top: 20px;
+        padding: 0;
+        list-style: none;
+        text-align: center;
+        font-family: "Roboto", sans-serif;
+        color: #fff;
+      }
+
+      .skills-list li {
+        margin-bottom: 10px;
+        font-size: 1rem;
+        line-height: 1.5;
+      }
+
+      .skills-list li::before {
+        content: "✔ ";
+        color: #ff0055;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Projects & Skills</h1>
+    </header>
+    <nav>
+      <a href="index.html">Home</a>
+    </nav>
+    <div class="container">
+      <section>
+        <h2>Projects</h2>
+        <div class="grid">
+          <img src="image3.jpg" alt="Project 1" />
+          <img src="photob.jpg" alt="Project 2" />
+          <img src="prjyyy.jpg" alt="Project 3" />
+          <img src="project2.png" alt="Project 4" />
+          <img src="pstr.jpg" alt="Project 5" />
+          <img
+            src="WhatsApp Image 2024-12-22 at 19.41.45_6bc78e2c.jpg"
+            alt="Project 6"
+          />
+        </div>
+        <div class="video-wrapper">
+          <video controls>
+            <source src="vidprjct.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </section>
+
+      <h2>Design Tools</h2>
+      <div class="grid">
+        <img src="ps.png" alt="Tool 1" />
+        <img src="figma.png" alt="Tool 2" />
+        <img src="blender.jpeg" alt="Tool 3" />
+        <img src="illustrator.jpeg" alt="Tool 4" />
+      </div>
+      <section>
+        <h2>Skills & Tools</h2>
+        <div class="grid">
+          <img src="download.jpeg" alt="Tool 1" />
+          <img src="AI.jpeg" alt="Tool 2" />
+          <img src="git.png" alt="Tool 3" />
+          <img src="html.jpeg" alt="Tool 4" />
+        </div>
+        <ul class="skills-list">
+          <li>Graphic Design (Adobe Suite, Canva, Figma)</li>
+          <li>Web Development (HTML, CSS, JavaScript)</li>
+          <li>UI/UX Design</li>
+          <li>Java Programming</li>
+          <li>Git & GitHub</li>
+          <li>Netlify Hosting</li>
+          <li>React</li>
+          <li>Artificial Intelligence</li>
+          <li>Responsive Design</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Certificates</h2>
+        <div class="grid">
+          <img src="certificate 2.png" alt="Certificate 1" />
+          <img src="certificate.png" alt="Certificate 2" />
+          <img src="IMG-20230524-WA0006.jpg" alt="Certificate 3" />
+        </div>
+      </section>
+
+      <section>
+        <h2>GitHub Repositories</h2>
+        <ul>
+          <li>
+            <a
+              href="https://github.com/Leethabo27/Qr-Code-Component"
+              target="_blank"
+              >Repository 1</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://github.com/Leethabo27/my-weather-app"
+              target="_blank"
+              >Repository 2</a
+            >
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Vercel Projects</h2>
+        <ul>
+          <li>
+            <a href="https://www.futurefrontinnovators.co.za/" target="_blank"
+              >Vercel Project 1</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://vercel.com/lethabo-semenyas-projects/qr-code-component"
+              target="_blank"
+              >Vercel Project 2</a
+            >
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Front-End Developer Workshop</h2>
+        <p>
+          Check out my
+          <a
+            href="https://www.shecodes.io/graduates/142372-lethabo-semenya"
+            target="_blank"
+            >SheCodes Workshop Profile</a
+          >
+          for detailed information about my training and projects.
+        </p>
+      </section>
+    </div>
+    <footer>&copy; 2024 Lethabo Semenya. All rights reserved.</footer>
+  </body>
+</html>
