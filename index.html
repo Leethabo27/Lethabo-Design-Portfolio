@@ -1,1 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Portfolio of Lethabo Semenya, a Graphic Designer and Junior Frontend Developer."
+    />
+    <meta
+      name="keywords"
+      content="Graphic Design, Frontend Developer, Portfolio, Lethabo Semenya"
+    />
+    <meta name="author" content="Lethabo Semenya" />
+    <title>
+      Lethabo Semenya | Graphic Designer & Junior Frontend Developer
+    </title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
 
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="android-chrome-192x192.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="512x512"
+      href="android-chrome-512x512.png"
+    />
+
+    <link rel="manifest" href="site.webmanifest" />
+    <header>
+      <h1>
+        <span class="typewriter"></span>
+      </h1>
+    </header>
+
+    <script>
+      const typewriterTexts = [
+        "Lethabo Semenya",
+        "Graphic Designer",
+        "Junior Frontend Developer",
+        "Creativity in Every Line of Code",
+        "Designing the Future",
+      ];
+
+      let textIndex = 0;
+      let charIndex = 0;
+      const typingSpeed = 150;
+      const deletingSpeed = 100;
+      const pauseBetweenTexts = 2000;
+      const typewriterElement = document.querySelector(".typewriter");
+
+      function typeText() {
+        if (charIndex < typewriterTexts[textIndex].length) {
+          typewriterElement.textContent +=
+            typewriterTexts[textIndex].charAt(charIndex);
+          charIndex++;
+          setTimeout(typeText, typingSpeed);
+        } else {
+          setTimeout(deleteText, pauseBetweenTexts);
+        }
+      }
+
+      function deleteText() {
+        if (charIndex > 0) {
+          typewriterElement.textContent = typewriterTexts[textIndex].substring(
+            0,
+            charIndex - 1
+          );
+          charIndex--;
+          setTimeout(deleteText, deletingSpeed);
+        } else {
+          textIndex = (textIndex + 1) % typewriterTexts.length;
+          setTimeout(typeText, typingSpeed);
+        }
+      }
+
+      typeText();
+    </script>
+    <style>
+      body {
+        font-family: "Roboto", sans-serif;
+        margin: 0;
+        padding: 0;
+        color: #ff0055;
+        background-color: #000;
+        overflow-x: hidden;
+      }
+
+      header {
+        text-align: center;
+        padding: 20px;
+        background-color: rgba(255, 5, 109, 0.8);
+        color: #fff;
+        font-family: "Playfair Display", serif;
+      }
+
+      header h1 {
+        font-size: 3rem;
+      }
+
+      h1 {
+        font-family: "Playfair Display", serif;
+        font-size: 1rem;
+        color: #fff;
+        line-height: 1.5;
+        margin: 0;
+        align-items: center;
+      }
+
+      header p {
+        font-size: 1.2rem;
+      }
+
+      .video-section {
+        position: relative;
+        height: 60vh;
+        overflow: hidden;
+      }
+
+      .video-section video {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        min-width: 100%;
+        min-height: 100%;
+        z-index: -1;
+        filter: brightness(50%);
+      }
+
+      .video-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        font-size: 2rem;
+        font-family: "Playfair Display", serif;
+        text-align: center;
+      }
+
+      nav {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        background-color: #222;
+        padding: 10px;
+      }
+
+      nav a {
+        text-decoration: none;
+        color: #fff;
+        font-weight: bold;
+        font-size: 1.1rem;
+      }
+
+      nav a:hover {
+        color: #aaa;
+      }
+
+      .container {
+        padding: 20px;
+        max-width: 1200px;
+        margin: auto;
+      }
+
+      .resume-button {
+        display: inline-block;
+        padding: 10px 20px;
+        margin: 20px;
+        background-color: #ff0080;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 5px;
+        font-size: 1rem;
+      }
+
+      .resume-button:hover {
+        background-color: #666;
+      }
+
+      footer {
+        text-align: center;
+        padding: 10px;
+        background-color: #222;
+        color: #fff;
+      }
+
+      /* Responsive Design */
+      @media (max-width: 768px) {
+        header h1 {
+          font-size: 2rem;
+        }
+
+        .video-overlay {
+          font-size: 1.5rem;
+          padding: 20px;
+        }
+      }
+
+      .gallery {
+        padding: 20px 0;
+        text-align: center;
+        color: #fff;
+      }
+
+      .gallery h2 {
+        font-family: "Playfair Display", serif;
+        margin-bottom: 20px;
+        font-size: 2rem;
+      }
+
+      .gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+      }
+
+      .gallery-item {
+        overflow: hidden;
+        border-radius: 10px;
+        background-color: #222;
+        padding: 10px;
+        text-align: center;
+      }
+
+      .gallery-item img {
+        width: 100%;
+        height: auto;
+        transition: transform 0.3s ease;
+        border-radius: 10px;
+      }
+
+      .gallery-item img:hover {
+        transform: scale(1.05);
+      }
+
+      .gallery-item p {
+        margin-top: 10px;
+        font-family: "Roboto", sans-serif;
+        font-size: 1rem;
+      }
+    </style>
+  </head>
+  <body>
+    <header></header>
+    <section class="video-section">
+      <video autoplay muted loop>
+        <source src="Lethabo Semenya  Graphic Designer.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+      <div class="video-overlay">
+        Creativity in Action: Design & Development
+      </div>
+    </section>
+    <nav>
+      <a href="/projects-skills">Portfolio & Skills</a>
+      <a href="/get-to-know-me">Get to Know Me</a>
+    </nav>
+
+    <div class="container">
+      <section class="hero">
+        <a class="resume-button" href="Lethabo Semenya Cv.pdf" download
+          >Download My Resume</a
+        >
+      </section>
+
+      <section class="gallery">
+        <h2>Featured Projects</h2>
+        <div class="gallery-grid">
+          <div class="gallery-item">
+            <img src="image4.jpg" alt="Project 1" />
+            <p>Illustration</p>
+          </div>
+          <div class="gallery-item">
+            <img src="work2.png" alt="Project 2" />
+            <p>Branding</p>
+          </div>
+          <div class="gallery-item">
+            <img src="image2.jpg" alt="Project 3" />
+            <p>Print</p>
+          </div>
+        </div>
+      </section>
+    </div>
+    <footer>&copy; 2024 Lethabo Semenya. All rights reserved.</footer>
+  </body>
+</html>
