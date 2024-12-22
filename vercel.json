@@ -1,0 +1,7 @@
+{
+  "cleanUrls": true,
+  "rewrites": [
+    { "source": "/get-to-know-me", "destination": "/get-to-know-me.html" },
+    { "source": "/projects-skills", "destination": "/projects-skills.html" }
+  ]
+}
