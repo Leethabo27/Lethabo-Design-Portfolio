@@ -13,17 +13,24 @@
     />
     <meta name="author" content="Lethabo Semenya" />
     <title>Projects & Skills - Lethabo Semenya</title>
+
     <link
-      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@400;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
       rel="stylesheet"
     />
+
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+      rel="stylesheet"
+    />
+
     <style>
       body {
         font-family: "Roboto", sans-serif;
+        color: #fff;
+        background-color: #1a1a1a;
         margin: 0;
         padding: 0;
-        background-color: #000;
-        color: #fff;
       }
 
       header {
@@ -57,22 +64,114 @@
         color: #ff0055;
       }
 
+      h2,
+      h3 {
+        color: #ff0055;
+        text-align: center;
+        margin-bottom: 30px;
+      }
+
       .container {
         max-width: 1200px;
         margin: auto;
-        padding: 20px;
+        padding: 50px 20px;
       }
-
-      section {
-        margin-bottom: 40px;
-      }
-
-      h2 {
+      h4 {
         font-family: "Playfair Display", serif;
         font-size: 2rem;
         text-align: center;
         margin-bottom: 20px;
         color: #ff0055;
+      }
+      h5 {
+        font-family: "Playfair Display", serif;
+        font-size: 2rem;
+        text-align: center;
+        margin-bottom: 20px;
+        color: #ff0055;
+      }
+
+      /* Skills Section */
+      .skills-section,
+      .tools-section {
+        margin-bottom: 50px;
+      }
+
+      .skills-grid,
+      .tools-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 20px;
+        text-align: center;
+      }
+
+      .skills-grid .skill,
+      .tools-grid .tool {
+        background-color: #222;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        transition: transform 0.3s ease, background-color 0.3s ease;
+      }
+
+      .skills-grid .skill:hover,
+      .tools-grid .tool:hover {
+        transform: scale(1.1);
+        background-color: #ff0055;
+      }
+
+      .skills-grid .skill i,
+      .tools-grid .tool i {
+        font-size: 3rem;
+        margin-bottom: 10px;
+        color: #ff0055;
+        animation: bounce 2s infinite;
+      }
+
+      .skills-grid .skill:hover i,
+      .tools-grid .tool:hover i {
+        color: #fff;
+      }
+
+      @keyframes bounce {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-10px);
+        }
+      }
+      .graphic-design-skills {
+        list-style: none;
+        padding: 0;
+        text-align: center;
+        margin: 10px 0;
+      }
+
+      .graphic-design-skills li {
+        margin: 8px 0;
+        font-size: 1rem;
+        color: #ffffff;
+        position: relative;
+        padding-left: 25px;
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .graphic-design-skills li::before {
+        content: "✔";
+        color: #ff0055;
+        font-size: 1.2rem;
+      }
+
+      .skill-level {
+        font-size: 0.9rem;
+        color: #ffffff;
+        background-color: #ff008c;
+        padding: 2px 6px;
+        border-radius: 4px;
+        text-transform: capitalize;
       }
 
       .grid {
@@ -91,48 +190,22 @@
         transform: scale(1.05);
       }
 
-      .video-wrapper {
-        position: relative;
-        overflow: hidden;
-        border-radius: 10px;
-      }
-
-      .video-wrapper video {
-        width: 100%;
-        border-radius: 10px;
-      }
-
       footer {
-        text-align: center;
-        padding: 10px;
         background-color: #222;
         color: #fff;
-      }
-
-      @media (max-width: 768px) {
-        h2 {
-          font-size: 1.5rem;
-        }
-      }
-
-      .skills-list {
-        margin-top: 20px;
-        padding: 0;
-        list-style: none;
         text-align: center;
-        font-family: "Roboto", sans-serif;
-        color: #fff;
+        padding: 20px;
       }
 
-      .skills-list li {
-        margin-bottom: 10px;
-        font-size: 1rem;
-        line-height: 1.5;
-      }
-
-      .skills-list li::before {
-        content: "✔ ";
+      footer a {
         color: #ff0055;
+        text-decoration: none;
+        margin: 0 15px;
+        font-size: 1.2rem;
+      }
+
+      footer a:hover {
+        text-decoration: underline;
       }
     </style>
   </head>
@@ -144,61 +217,89 @@
       <a href="index.html">Home</a>
     </nav>
     <div class="container">
+      <!-- Heading -->
+      <h2>Designing the Vision, Coding the Future</h2>
+
+      <!-- Skills Section -->
+      <section class="skills-section">
+        <h3>My Skills</h3>
+        <div class="skills-grid">
+          <div class="skill">
+            <i class="fas fa-pencil-alt"></i>
+            <p>Graphic Design</p>
+          </div>
+          <div class="skill">
+            <i class="fas fa-code"></i>
+            <p>Web Development</p>
+          </div>
+          <div class="skill">
+            <i class="fas fa-drafting-compass"></i>
+            <p>3D Visualization</p>
+          </div>
+          <div class="skill">
+            <i class="fas fa-search"></i>
+            <p>Software Testing</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Tools Section -->
+      <section class="tools-section">
+        <h3>Tools I Use</h3>
+        <div class="tools-grid">
+          <!-- Web Development Tools -->
+          <div class="tool">
+            <i class="fab fa-html5"></i>
+            <p>HTML</p>
+          </div>
+          <div class="tool">
+            <i class="fab fa-css3-alt"></i>
+            <p>CSS</p>
+          </div>
+          <div class="tool">
+            <i class="fab fa-js"></i>
+            <p>JavaScript</p>
+          </div>
+          <div class="tool">
+            <i class="fab fa-react"></i>
+            <p>React</p>
+          </div>
+          <!-- Other Tools -->
+          <div class="tool">
+            <i class="fab fa-git"></i>
+            <p>Git</p>
+          </div>
+          <div class="tool">
+            <i class="fab fa-github"></i>
+            <p>GitHub</p>
+          </div>
+          <div class="tool">
+            <i class="fas fa-drafting-compass"></i>
+            <p>Blender</p>
+          </div>
+        </div>
+      </section>
+      <h4>Graphic Design Projects</h4>
+      <!-- Projects Section -->
       <section>
-        <h2>Projects</h2>
         <div class="grid">
           <img src="image3.jpg" alt="Project 1" />
-          <img src="photob.jpg" alt="Project 2" />
-          <img src="prjyyy.jpg" alt="Project 3" />
-          <img src="project2.png" alt="Project 4" />
-          <img src="pstr.jpg" alt="Project 5" />
-          <img
-            src="WhatsApp Image 2024-12-22 at 19.41.45_6bc78e2c.jpg"
-            alt="Project 6"
-          />
+          <img src="image4.jpg" alt="Project 2" />
+          <img src="project2.png" alt="Project 3" />
+          <img src="brand.png" alt="Project 6" />
         </div>
-        <div class="video-wrapper">
-          <video controls>
-            <source src="vidprjct.mp4" type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
-        </div>
-      </section>
 
-      <h2>Design Tools</h2>
-      <div class="grid">
-        <img src="ps.png" alt="Tool 1" />
-        <img src="figma.png" alt="Tool 2" />
-        <img src="blender.jpeg" alt="Tool 3" />
-        <img src="illustrator.jpeg" alt="Tool 4" />
-      </div>
-      <section>
-        <h2>Skills & Tools</h2>
-        <div class="grid">
-          <img src="download.jpeg" alt="Tool 1" />
-          <img src="AI.jpeg" alt="Tool 2" />
-          <img src="git.png" alt="Tool 3" />
-          <img src="html.jpeg" alt="Tool 4" />
-        </div>
-        <ul class="skills-list">
-          <li>Graphic Design (Adobe Suite, Canva, Figma)</li>
-          <li>Web Development (HTML, CSS, JavaScript)</li>
-          <li>UI/UX Design</li>
-          <li>Java Programming</li>
-          <li>Git & GitHub</li>
-          <li>Netlify Hosting</li>
-          <li>React</li>
-          <li>Artificial Intelligence</li>
-          <li>Responsive Design</li>
-        </ul>
-      </section>
-
-      <section>
-        <h2>Certificates</h2>
-        <div class="grid">
-          <img src="certificate 2.png" alt="Certificate 1" />
-          <img src="certificate.png" alt="Certificate 2" />
-          <img src="IMG-20230524-WA0006.jpg" alt="Certificate 3" />
+        <div>
+          <h5>Graphic Design Skills</h5>
+          <ul class="graphic-design-skills">
+            <li>Graphic Design <span class="skill-level">Pro</span></li>
+            <li>Figma <span class="skill-level">Intermediate</span></li>
+            <li>Canva <span class="skill-level">Pro</span></li>
+            <li>
+              Adobe Photoshop <span class="skill-level">Intermediate</span>
+            </li>
+            <li>UI/UX Design <span class="skill-level">Beginner</span></li>
+          </ul>
         </div>
       </section>
 
@@ -253,6 +354,10 @@
         </p>
       </section>
     </div>
-    <footer>&copy; 2024 Lethabo Semenya. All rights reserved.</footer>
+
+    <!-- Footer -->
+    <footer>
+      <p>&copy; 2024 Lethabo Semenya | All rights reserved.</p>
+    </footer>
   </body>
 </html>
