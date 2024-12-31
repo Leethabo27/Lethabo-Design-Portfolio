@@ -38,6 +38,11 @@
     />
 
     <link rel="manifest" href="site.webmanifest" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+
     <header>
       <h1>
         <span class="typewriter"></span>
@@ -87,6 +92,9 @@
 
       typeText();
     </script>
+
+    <!-- At the bottom of your HTML, just before the closing </body> tag -->
+
     <style>
       body {
         font-family: "Roboto", sans-serif;
@@ -112,6 +120,15 @@
       h1 {
         font-family: "Playfair Display", serif;
         font-size: 1rem;
+        color: #fff;
+        line-height: 1.5;
+        margin: 0;
+        align-items: center;
+      }
+
+      h3 {
+        font-family: "Playfair Display", serif;
+        font-size: 2rem;
         color: #fff;
         line-height: 1.5;
         margin: 0;
@@ -153,8 +170,6 @@
         font-family: "Playfair Display", serif;
         text-align: center;
       }
-
-    
       nav {
         display: flex;
         justify-content: center;
@@ -164,32 +179,73 @@
       }
 
       .nav-link {
-        color: #ff0055;
+        color: #fff;
         font-size: 1.2rem;
         font-weight: bold;
         text-decoration: none;
         position: relative;
-        transition: color 0.3s ease;
-      }
-
-      .nav-link::after {
-        content: "";
-        position: absolute;
-        bottom: -5px;
-        left: 0;
-        width: 0;
-        height: 2px;
-        background-color: #ff0055;
-        transition: width 0.3s ease;
+        padding: 12px 20px; /* Button-like padding */
+        border-radius: 70px; /* Rounded corners */
+        border: 2px solid transparent; /* Transparent border initially */
+        background-color: #ff0055; /* Background color for button */
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        transition: background-color 0.3s ease, transform 0.3s ease,
+          border-color 0.3s ease;
       }
 
       .nav-link:hover {
+        background-color: #ff0080; /* Darker background on hover */
+        border-color: #ff0055; /* Border color on hover */
         color: #fff;
+        transform: translateY(-5px); /* Button bounce effect */
+      }
+
+      .nav-link::after {
+        content: "→"; /* Arrow symbol */
+        font-size: 1.2rem;
+        opacity: 0;
+        transition: opacity 0.3s ease, transform 0.3s ease;
       }
 
       .nav-link:hover::after {
-        width: 100%;
+        opacity: 1; /* Show the arrow */
+        transform: translateX(5px); /* Slight movement of the arrow */
       }
+
+      .nav-link.project-skills {
+        background-color: #ff8eaa; /* Green color for Project & Skills */
+        border-color: #ffa0c8;
+      }
+
+      .nav-link.get-to-know {
+        background-color: #ff033a; /* Blue color for Get to Know Me */
+        border-color: #ff0280;
+      }
+
+      .nav-link.project-skills:hover {
+        background-color: #fd036b; /* Darker green on hover */
+        border-color: #fd004c;
+      }
+
+      .nav-link.get-to-know:hover {
+        background-color: #1e88e5; /* Darker blue on hover */
+        border-color: #1e88e5;
+      }
+
+      @keyframes bounce {
+        0% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-5px);
+        }
+        100% {
+          transform: translateY(0);
+        }
+      }
+
       .container {
         padding: 20px;
         max-width: 1200px;
@@ -200,7 +256,7 @@
         display: inline-block;
         padding: 10px 20px;
         margin: 20px;
-        background-color: #ff0080;
+        background-color: #ff0040;
         color: #fff;
         text-decoration: none;
         border-radius: 5px;
@@ -209,6 +265,103 @@
 
       .resume-button:hover {
         background-color: #666;
+      }
+      .experience {
+        text-align: center;
+        padding: 60px 20px;
+        background-color: #000000;
+      }
+
+      .experience h2 {
+        font-size: 2.5rem;
+        color: #fffefe;
+        margin-bottom: 40px;
+      }
+
+      .experience-container {
+        display: flex;
+        justify-content: center;
+        gap: 40px;
+        flex-wrap: wrap;
+      }
+
+      .experience-item {
+        background-color: #ff006a;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(255, 0, 98, 0.1);
+        padding: 30px;
+        max-width: 400px;
+        flex-basis: 45%;
+        text-align: left;
+        transition: transform 0.3s ease;
+      }
+
+      .experience-item h3 {
+        font-size: 1.8rem;
+        color: #ffffff;
+        margin-bottom: 20px;
+      }
+
+      .experience-item p {
+        font-size: 1.1rem;
+        color: #ffffff;
+      }
+
+      .experience-item:hover {
+        transform: scale(1.05);
+      }
+
+      @media screen and (max-width: 768px) {
+        .experience-container {
+          flex-direction: column;
+          align-items: center;
+        }
+        .experience-item {
+          max-width: 90%;
+          margin-bottom: 20px;
+        }
+        /* Reviews Section */
+        .reviews {
+          text-align: center;
+          padding: 60px 20px;
+          background-color: #ff014d;
+        }
+
+        .reviews h5 {
+          font-size: 2.5rem;
+          color: #ffffff;
+          margin-bottom: 40px;
+        }
+
+        .review-container {
+          position: relative;
+          max-width: 800px;
+          margin: 0 auto;
+          overflow: hidden;
+        }
+      }
+
+      .social-links {
+        text-align: center;
+        padding: 40px 0;
+      }
+
+      .social-links h2 {
+        font-size: 2rem;
+        color: #fff;
+        margin-bottom: 20px;
+      }
+
+      .social-links a {
+        font-size: 2rem;
+        color: #ff0055;
+        margin: 0 15px;
+        transition: transform 0.3s ease, color 0.3s ease;
+      }
+
+      .social-links a:hover {
+        transform: scale(1.2);
+        color: #fff;
       }
 
       footer {
@@ -285,7 +438,7 @@
         Creativity in Action: Design & Development
       </div>
     </section>
-      <nav>
+    <nav>
       <a href="/projects-skills" class="nav-link">Portfolio & Skills</a>
       <a href="/get-to-know-me" class="nav-link">Get to Know Me</a>
     </nav>
@@ -301,18 +454,95 @@
         <h2>Featured Projects</h2>
         <div class="gallery-grid">
           <div class="gallery-item">
-            <img src="image4.jpg" alt="Project 1" />
+            <img src="miles morales.webp" alt="Project 1" />
             <p>Illustration</p>
           </div>
           <div class="gallery-item">
-            <img src="work2.png" alt="Project 2" />
+            <img src="miles g morales.webp" alt="Project 2" />
             <p>Branding</p>
           </div>
           <div class="gallery-item">
-            <img src="image2.jpg" alt="Project 3" />
+            <img src="image3.jpg" alt="Project 3" />
             <p>Print</p>
           </div>
         </div>
+        <section class="experience">
+          <h2>My Experience</h2>
+          <div class="experience-container">
+            <div class="experience-item">
+              <h3>Graphic Design</h3>
+              <p>
+                I have over X years of experience in graphic design,
+                specializing in logo creation, branding, web design, and 3D
+                visualization. I have worked with various clients to bring their
+                visions to life, ensuring high-quality and innovative designs.
+              </p>
+            </div>
+            <div class="experience-item">
+              <h3>Frontend Development</h3>
+              <p>
+                As a junior frontend developer, I am well-versed in HTML, CSS,
+                JavaScript, and responsive web design. I am currently expanding
+                my skills in web development, focusing on improving user
+                experience and interface design.
+              </p>
+            </div>
+          </div>
+        </section>
+        <section class="reviews">
+          <h5>Reviews from Peers & Recommendations</h5>
+          <div class="review-container">
+            <div class="review-slide">
+              <p>
+                "Lethabo is a true professional! Working with her on design
+                projects has been an absolute pleasure. Her creativity and
+                attention to detail are unmatched. She's always ready to
+                collaborate and bring fresh ideas to the table!"
+              </p>
+              <p><strong>- Katlego Kirsten</strong></p>
+            </div>
+            <div class="review-slide">
+              <p>
+                "I had the pleasure of working with Lethabo on a few projects,
+                and she always delivers on time with outstanding quality. Her
+                technical skills and ability to bring a concept to life are
+                remarkable. Highly recommended!"
+              </p>
+              <p><strong>- Nomvula</strong></p>
+            </div>
+          </div>
+        </section>
+      </section>
+      <section class="social-links">
+        <h3>Connect with Me</h3>
+        <br />
+        <a href="https://github.com/Leethabo27" target="_blank">
+          <i class="fab fa-github"></i>
+        </a>
+        <a
+          href="https://www.linkedin.com/in/lethabo-semenya-80aa81282/"
+          target="_blank"
+        >
+          <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="https://www.behance.net/lethabosemenya" target="_blank">
+          <i class="fab fa-behance"></i>
+        </a>
+        <a href="https://dribbble.com/Lethabo_25" target="_blank">
+          <i class="fab fa-dribbble"></i>
+        </a>
+        <a
+          href="https://www.facebook.com/profile.php?id=61554337682794"
+          target="_blank"
+        >
+          <i class="fab fa-facebook"></i>
+        </a>
+        <a href="https://www.instagram.com/lethabo_semenya/" target="_blank">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://x.com/Thabo84602222" target="_blank">
+          <i class="fab fa-twitter"></i>
+        </a>
       </section>
     </div>
     <footer>&copy; 2024 Lethabo Semenya. All rights reserved.</footer>
