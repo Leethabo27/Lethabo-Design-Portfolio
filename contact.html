@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Contact page for Lethabo Semenya, a Graphic Designer and Frontend Developer"
+    />
+    <meta
+      name="keywords"
+      content="Contact, Lethabo Semenya, Graphic Design, Frontend Development"
+    />
+    <meta name="author" content="Lethabo Semenya" />
+    <title>Contact | Lethabo Semenya</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        color: #ffffff;
+        background-color: #000;
+        overflow-x: hidden;
+      }
+
+      .video-bg {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: -1;
+      }
+
+      .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 1;
+      }
+
+      .main-content {
+        z-index: 2;
+        position: relative;
+        text-align: center;
+        margin-top: 20vh;
+      }
+
+      h1 {
+        font-size: 3rem;
+        text-shadow: 0 0 10px #00f, 0 0 20px #0ff;
+      }
+
+      .typewrite {
+        color: #fff;
+        font-weight: bold;
+        text-shadow: 0 0 5px #270091;
+      }
+
+      .btn-glow {
+        background: linear-gradient(to right, #00f, #0ff);
+        color: #fff;
+        border: none;
+        padding: 0.75rem 1.5rem;
+        border-radius: 50px;
+        text-transform: uppercase;
+        font-weight: bold;
+        box-shadow: 0 0 10px #1100ff, 0 0 20px #0400ff;
+      }
+
+      .btn-glow:hover {
+        background: #1900ff;
+        color: #fff;
+        box-shadow: 0 0 15px #1100ff, 0 0 25px #0004ff;
+      }
+
+      .icon {
+        font-size: 3rem;
+        color: #0ff;
+        animation: move 5s infinite;
+      }
+
+      @keyframes move {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-10px);
+        }
+      }
+
+      .contact-form {
+        margin-top: 40px;
+        text-align: center;
+        max-width: 500px;
+        margin: 50px auto;
+        background-color: rgba(0, 0, 0, 0.7);
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 255, 255, 0.7);
+      }
+
+      .contact-form h2 {
+        color: #fff;
+        margin-bottom: 20px;
+      }
+
+      .contact-form input,
+      .contact-form textarea {
+        width: 100%;
+        padding: 12px;
+        margin-bottom: 10px;
+        border-radius: 5px;
+        border: none;
+        outline: none;
+        background-color: rgba(255, 255, 255, 0.1);
+        color: #fff;
+        font-size: 1rem;
+      }
+
+      .contact-form input::placeholder,
+      .contact-form textarea::placeholder {
+        color: #aaa;
+      }
+
+      .contact-form button {
+        background: linear-gradient(to right, #00f, #0ff);
+        color: white;
+        padding: 12px 20px;
+        border-radius: 5px;
+        border: none;
+        cursor: pointer;
+        box-shadow: 0 0 10px rgba(0, 255, 255, 0.7);
+        font-size: 1rem;
+        width: 100%;
+      }
+
+      .contact-form button:hover {
+        background: #1900ff;
+        box-shadow: 0 0 15px #1100ff, 0 0 25px #0004ff;
+      }
+
+      footer {
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        background-color: #000;
+        color: #fff;
+        padding: 1rem 0;
+        text-align: center;
+        z-index: 9999;
+      }
+
+      .message-intro {
+        color: #fff;
+        font-size: 1.2rem;
+        margin-bottom: 30px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Video Background -->
+    <video autoplay muted loop class="video-bg">
+      <source src="contact.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+    <div class="overlay"></div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+      <h1>
+        Say Hello
+        <span
+          class="typewrite"
+          data-text='["Lethabo Semenya", "I am ready to work with you!"]'
+        ></span>
+      </h1>
+      <a href="#contact-form">
+        <button class="btn-glow">Contact Me</button>
+      </a>
+      <div class="icon mt-5">
+        <i class="fa fa-arrow-down"></i>
+      </div>
+    </div>
+
+    <!-- Contact Form -->
+    <div class="contact-form" id="contact-form">
+      <h2>Get in Touch</h2>
+      <p class="message-intro">
+        I would love to work with you. Feel free to send me a message below!
+      </p>
+      <form action="https://formspree.io/f/movvyqbe" method="POST">
+        <input type="text" name="name" placeholder="Your Name" required />
+        <input type="email" name="email" placeholder="Your Email" required />
+        <textarea
+          name="message"
+          rows="4"
+          placeholder="Your Message"
+          required
+        ></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
+
+    <!-- Footer -->
+    <footer>&copy; 2025 Lethabo Semenya. All rights reserved.</footer>
+
+    <!-- Typewriter Script -->
+    <script>
+      const typewrite = document.querySelector(".typewrite");
+      const texts = JSON.parse(typewrite.getAttribute("data-text"));
+      let i = 0,
+        j = 0,
+        isDeleting = false;
+
+      function typeEffect() {
+        const currentText = texts[j];
+        typewrite.textContent = isDeleting
+          ? currentText.substring(0, i--)
+          : currentText.substring(0, i++);
+        if (!isDeleting && i === currentText.length) {
+          isDeleting = true;
+          setTimeout(typeEffect, 1500);
+        } else if (isDeleting && i === 0) {
+          isDeleting = false;
+          j = (j + 1) % texts.length;
+          setTimeout(typeEffect, 500);
+        } else {
+          setTimeout(typeEffect, isDeleting ? 150 : 250);
+        }
+      }
+      typeEffect();
+    </script>
+  </body>
+</html>

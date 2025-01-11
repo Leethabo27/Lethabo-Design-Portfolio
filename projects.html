@@ -1,0 +1,1081 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Projects | Lethabo Semenya</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Great+Vibes&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      /* General Reset */
+      body,
+      html {
+        margin: 0;
+        padding: 0;
+        font-family: "Poppins", sans-serif;
+        height: 100%;
+        overflow-x: hidden;
+      }
+
+      /* Video Background */
+      .video-container {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        z-index: -1;
+      }
+
+      .video-container video {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        min-width: 100%;
+        min-height: 100%;
+        object-fit: cover;
+      }
+
+      /* Overlay for readability */
+      .overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.6); /* Adjust transparency here */
+        z-index: -1;
+      }
+
+      /* Header */
+      .projects-header {
+        font-family: "Cinzel Decorative", serif;
+        font-size: 3rem;
+        text-align: center;
+        margin: 50px 0;
+        text-shadow: 0 0 15px #5900ff;
+        animation: glow 2s infinite alternate, typing 4s steps(40) 1s forwards;
+        white-space: nowrap;
+        overflow: hidden;
+        border-right: 3px solid;
+      }
+
+      /* Typewriter effect */
+      @keyframes typing {
+        from {
+          width: 0;
+        }
+        to {
+          width: 100%;
+        }
+      }
+
+      @keyframes glow {
+        0% {
+          text-shadow: 0 0 10px #5900ff, 0 0 20px #0011ff, 0 0 30px #3700ff;
+        }
+        100% {
+          text-shadow: 0 0 20px #4c00ff, 0 0 30px #1900ff, 0 0 40px #2f00ff;
+        }
+      }
+      /* Certificates Section */
+      .certificates-section {
+        padding: 50px 20px;
+        position: relative;
+        z-index: 1;
+        text-align: center;
+        color: #bfcbff;
+      }
+
+      .certificates-section h2 {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+      }
+
+      .certificates-section p {
+        font-size: 1.2rem;
+        max-width: 800px;
+        margin: 0 auto 30px;
+        line-height: 1.6;
+      }
+
+      .profile-link {
+        display: inline-block;
+        margin-bottom: 30px;
+        font-size: 1.2rem;
+        color: #007bff;
+        text-decoration: none;
+        background-color: #fff;
+        padding: 10px 20px;
+        border-radius: 5px;
+        transition: all 0.3s ease;
+      }
+
+      .profile-link:hover {
+        background-color: #007bff;
+        color: #fff;
+      }
+
+      .certificates-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 20px;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .certificates-grid img {
+        width: 100%;
+        height: auto;
+        border-radius: 10px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .certificates-grid img:hover {
+        transform: scale(1.1);
+        box-shadow: 0 0 20px #fff;
+      }
+
+      /* Content Styling */
+      .content {
+        position: relative;
+        z-index: 1;
+        padding: 20px;
+        color: #fff;
+        text-align: center;
+      }
+
+      /* Projects Section */
+      .projects-section {
+        padding: 50px 20px;
+        text-align: center;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 20px;
+      }
+
+      .grid img {
+        width: 100%;
+        border-radius: 10px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .grid img:hover {
+        transform: scale(1.1);
+        box-shadow: 0 0 20px #00bfff;
+      }
+
+      /* Back to Top Button */
+      .back-to-top {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        background-color: #5900ff;
+        color: #fff;
+        border: none;
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.5rem;
+        cursor: pointer;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        z-index: 10;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.3s, visibility 0.3s;
+      }
+
+      .back-to-top.show {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      .icons i {
+        font-size: 2rem;
+        color: #2600ff;
+        animation: bounce 2s infinite;
+      }
+
+      @keyframes bounce {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-10px);
+        }
+      }
+
+      .projects-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 20px;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .projects-grid img {
+        width: 100%;
+        height: auto;
+        border-radius: 10px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .projects-grid img:hover {
+        transform: scale(1.1);
+        box-shadow: 0 0 20px #fff;
+      }
+
+      /* Skills Section */
+      .skills-section {
+        padding: 30px 20px;
+        background-color: #000000;
+        text-align: center;
+      }
+
+      .skills-section ul {
+        list-style: none;
+        padding: 0;
+      }
+
+      .skills-section li {
+        margin: 10px 0;
+        font-size: 1.2rem;
+      }
+
+      .skill-level {
+        background-color: #007bff;
+        color: #fff;
+        padding: 2px 8px;
+        border-radius: 5px;
+        margin-left: 10px;
+      }
+
+      /* Repositories and Vercel Section */
+      .repos-section,
+      .vercel-section {
+        padding: 30px 20px;
+        text-align: center;
+        background-color: #000000;
+        color: #fff;
+      }
+
+      .repos-section ul,
+      .vercel-section ul {
+        list-style: none;
+        padding: 0;
+      }
+
+      .repos-section ul li,
+      .vercel-section ul li {
+        margin: 10px 0;
+      }
+
+      .repos-section ul a,
+      .vercel-section ul a {
+        color: #007bff;
+        text-decoration: none;
+      }
+
+      .repos-section ul a:hover,
+      .vercel-section ul a:hover {
+        text-decoration: underline;
+      }
+
+      /* Collage Section */
+      .collage-section {
+        padding: 50px 20px;
+        position: relative;
+        z-index: 1;
+        text-align: center;
+      }
+
+      .collage-section h2 {
+        font-size: 2.5rem;
+        color: #fff;
+        margin-bottom: 30px;
+      }
+
+      .collage-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 20px;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .collage-grid img {
+        width: 100%;
+        height: auto;
+        border-radius: 10px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .collage-grid img:hover {
+        transform: scale(1.1);
+        box-shadow: 0 0 20px #fff;
+      }
+
+      /* Logo Design Section */
+      .logo-design-section {
+        padding: 50px 20px;
+        position: relative;
+        z-index: 1;
+        text-align: center;
+        color: #fff;
+      }
+
+      .logo-design-section h2 {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+        text-transform: uppercase;
+      }
+
+      .logo-design-section p {
+        font-size: 1.2rem;
+        max-width: 800px;
+        margin: 0 auto 30px;
+        line-height: 1.6;
+      }
+      /* Testimonials Section */
+      .testimonials-section {
+        padding: 50px 20px;
+        text-align: center;
+        background-color: #000000;
+        color: #fff;
+      }
+
+      .testimonials-section h2 {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+        text-transform: uppercase;
+      }
+
+      .testimonials-section p {
+        font-size: 1.2rem;
+        max-width: 800px;
+        margin: 0 auto 30px;
+        line-height: 1.6;
+      }
+
+      .testimonials-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+        margin: 20px auto;
+        max-width: 1200px;
+      }
+
+      .testimonial {
+        background: #003cff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .testimonial:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 0 20px #4c4cff;
+      }
+
+      .testimonial p {
+        font-size: 1rem;
+        margin-bottom: 10px;
+        font-style: italic;
+      }
+
+      .stars {
+        font-size: 1.5rem;
+        color: #ffcd3c;
+        margin-bottom: 10px;
+      }
+
+      .testimonial span {
+        display: block;
+        font-size: 0.9rem;
+        color: #aaa;
+      }
+
+      .recommendations {
+        margin-top: 50px;
+        text-align: left;
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .recommendations h3 {
+        font-size: 2rem;
+        margin-bottom: 20px;
+        text-align: center;
+      }
+
+      .recommendations ul {
+        list-style: none;
+        padding: 0;
+      }
+
+      .recommendations ul li {
+        margin-bottom: 20px;
+        background: #0943ff;
+        padding: 15px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+      }
+
+      .recommendations ul p {
+        font-size: 1rem;
+        margin-bottom: 5px;
+        font-style: italic;
+      }
+
+      .recommendations ul span {
+        font-size: 0.9rem;
+        color: #aaa;
+      }
+      /* Skills Grid Section */
+      .skills-grid-section {
+        padding: 50px 20px;
+        text-align: center;
+        background: linear-gradient(135deg, #000000, #000000);
+        color: #fff;
+      }
+
+      .skills-grid-section h2 {
+        font-size: 2.5rem;
+        margin-bottom: 10px;
+        text-transform: uppercase;
+      }
+
+      .skills-grid-section p {
+        font-size: 1.2rem;
+        margin-bottom: 30px;
+        max-width: 800px;
+        margin: 0 auto;
+        line-height: 1.6;
+      }
+
+      .skills-grid-section h3 {
+        font-size: 1.8rem;
+        margin: 20px 0;
+        color: #4c9aff;
+      }
+
+      .skills-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 20px;
+        max-width: 1000px;
+        margin: 0 auto;
+      }
+
+      .skill {
+        background: #000000;
+        padding: 20px;
+        border-radius: 10px;
+        text-align: center;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.5),
+          0 0 20px rgba(76, 154, 255, 0.6);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .skill:hover {
+        transform: scale(1.1);
+        box-shadow: 0 0 25px rgba(76, 154, 255, 0.9);
+      }
+
+      .skill span {
+        display: block;
+        font-size: 1.2rem;
+      }
+
+      .skill .level {
+        font-size: 1rem;
+        color: #4c9aff;
+        margin-top: 5px;
+        font-weight: bold;
+        background: rgba(76, 154, 255, 0.2);
+        padding: 5px 10px;
+        border-radius: 5px;
+        display: inline-block;
+      }
+
+      /* Companies Section */
+      .companies-section {
+        padding: 50px 20px;
+        text-align: center;
+        background-color: #000000;
+        color: #fff;
+      }
+
+      .companies-section h2 {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+        text-transform: uppercase;
+        background: #000000;
+      }
+
+      .companies-section p {
+        font-size: 1.2rem;
+        max-width: 800px;
+        margin: 0 auto 30px;
+        line-height: 1.6;
+      }
+
+      .companies-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 20px;
+        margin: 20px auto;
+        max-width: 1200px;
+      }
+
+      .company {
+        text-align: center;
+        background: #000000;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .company:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 0 20px #4c4cff;
+      }
+
+      .company img {
+        width: 100%;
+        height: auto;
+        border-radius: 10px;
+        margin-bottom: 10px;
+      }
+
+      .company span {
+        display: block;
+        font-size: 1rem;
+        color: #fff;
+        font-weight: bold;
+      }
+      /* My Designs Section */
+      .my-designs-section {
+        padding: 50px 20px;
+        text-align: center;
+        background: linear-gradient(135deg, #000000, #000000);
+        color: #fff;
+      }
+
+      .my-designs-section h2 {
+        font-size: 2.5rem;
+        margin-bottom: 10px;
+        text-transform: uppercase;
+      }
+
+      .my-designs-section p {
+        font-size: 1.2rem;
+        margin-bottom: 30px;
+        max-width: 800px;
+        margin: 0 auto;
+        line-height: 1.6;
+      }
+
+      .designs-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 20px;
+        max-width: 1000px;
+        margin: 0 auto;
+      }
+
+      .design-card {
+        background: #000000;
+        border-radius: 10px;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.5),
+          0 0 20px rgba(76, 154, 255, 0.6);
+        overflow: hidden;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .design-card:hover {
+        transform: scale(1.05);
+        box-shadow: 0 0 25px rgba(76, 154, 255, 0.9);
+      }
+
+      .design-card img {
+        width: 100%;
+        height: auto;
+        display: block;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+      }
+
+      .design-description {
+        padding: 15px;
+        text-align: left;
+      }
+
+      .design-description h3 {
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+        color: #4c9aff;
+      }
+
+      .design-description p {
+        font-size: 1rem;
+        line-height: 1.6;
+        color: #ccc;
+      }
+      /* Journey Section */
+      .journey-section {
+        padding: 50px 20px;
+        background: linear-gradient(135deg, #000000, #000000);
+        color: #fff;
+        text-align: center;
+      }
+
+      .journey-container {
+        max-width: 800px;
+        margin: 0 auto;
+        border: 2px solid #4c9aff;
+        border-radius: 15px;
+        padding: 30px;
+        background: rgba(0, 0, 0, 0.8);
+        box-shadow: 0 0 20px rgba(76, 154, 255, 0.6);
+      }
+
+      .journey-container h2 {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+        text-transform: uppercase;
+        color: #4c9aff;
+      }
+
+      .journey-container p {
+        font-size: 1.2rem;
+        line-height: 1.8;
+        margin-bottom: 20px;
+        color: #ccc;
+      }
+
+      .journey-container blockquote {
+        font-size: 1.5rem;
+        margin: 20px 0;
+        color: #ffce45;
+        font-style: italic;
+        border-left: 5px solid #ffce45;
+        padding-left: 15px;
+      }
+
+      .journey-container blockquote em {
+        color: #ffce45;
+      }
+
+      .journey-container p:last-child {
+        margin-bottom: 0;
+        color: #fff;
+      }
+
+      /* Footer Styling */
+      footer {
+        background-color: #121212;
+        padding: 20px 0;
+        text-align: center;
+        color: #fff;
+        font-family: "Poppins", sans-serif;
+      }
+
+      footer p {
+        margin: 0;
+        font-size: 1rem;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Video Background -->
+    <div class="video-container">
+      <video autoplay muted loop>
+        <source src="background.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+    </div>
+    <div class="overlay"></div>
+    <!-- Main Content -->
+    <div class="content">
+      <section class="projects-section">
+        <h2 class="projects-header">PRROJECTS</h2>
+      </section>
+      <!-- About My Journey Section -->
+      <section class="journey-section">
+        <div class="journey-container">
+          <h2>About My Journey</h2>
+          <p>
+            With several years of experience in graphic design and web
+            development, I have had the privilege of working on diverse
+            projects, including logo designs, book covers, posters, and even 3D
+            modeling for short films. Each project has been a stepping stone,
+            shaping my skills and expanding my creative vision. I am eager to
+            continue growing, learning new technologies, and taking on
+            innovative challenges in both design and coding.
+          </p>
+          <blockquote>
+            <em>
+              "Design is intelligence made visible, and coding is the art of
+              turning ideas into reality."
+            </em>
+          </blockquote>
+          <p>
+            As I look to the future, I aspire to push the boundaries of my
+            creativity, blend aesthetics with functionality, and inspire others
+            through my work.
+          </p>
+        </div>
+      </section>
+
+      <!-- My Designs Section -->
+      <section class="my-designs-section">
+        <h2>My Designs</h2>
+        <p>
+          Here are some of the exciting designs I’ve created, showcasing my
+          creativity and skills.
+        </p>
+
+        <div class="designs-grid">
+          <!-- 3D Spaceship -->
+          <div class="design-card">
+            <img src="spaceship.jpg" alt="3D Spaceship Design" />
+            <div class="design-description">
+              <h3>3D Spaceship Design</h3>
+              <p>
+                A futuristic spaceship created for a short film, designed with
+                intricate details in Blender.
+              </p>
+            </div>
+          </div>
+
+          <!-- Book Cover -->
+          <div class="design-card">
+            <img
+              src="Hardcover Books Mockup Front And Back View.png"
+              alt="Book Cover Design"
+            />
+            <div class="design-description">
+              <h3>Book Cover Design</h3>
+              <p>
+                Cover art for the upcoming book,
+                <strong>Endured Hardship, Breeds Success</strong>, symbolizing
+                resilience and triumph.
+              </p>
+            </div>
+          </div>
+
+          <!-- Miles Morales Poster -->
+          <div class="design-card">
+            <img src="miles morales.jpg" alt="Miles Morales Poster" />
+            <div class="design-description">
+              <h3>Miles Morales Poster</h3>
+              <p>
+                A creative poster inspired by Miles Morales, testing my Blender
+                skills with vibrant colors and dynamic poses.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Skills Grid Section -->
+      <section class="skills-grid-section">
+        <h2>My Skills</h2>
+        <p>Explore my expertise in graphic design and web development.</p>
+
+        <!-- Graphic Design Skills -->
+        <h3>Graphic Design Skills</h3>
+        <div class="skills-grid">
+          <div class="skill">
+            <span>Graphic Design</span>
+            <span class="level">Pro</span>
+          </div>
+          <div class="skill">
+            <span>Figma</span>
+            <span class="level">Intermediate</span>
+          </div>
+          <div class="skill">
+            <span>Canva</span>
+            <span class="level">Pro</span>
+          </div>
+          <div class="skill">
+            <span>Adobe Photoshop</span>
+            <span class="level">Intermediate</span>
+          </div>
+          <div class="skill">
+            <span>UI/UX Design</span>
+            <span class="level">Beginner</span>
+          </div>
+        </div>
+
+        <!-- Web Development Skills -->
+        <h3>Web Development Skills</h3>
+        <div class="skills-grid">
+          <div class="skill">
+            <span>HTML</span>
+            <span class="level">Advanced</span>
+          </div>
+          <div class="skill">
+            <span>CSS</span>
+            <span class="level">Advanced</span>
+          </div>
+          <div class="skill">
+            <span>JavaScript</span>
+            <span class="level">Intermediate</span>
+          </div>
+          <div class="skill">
+            <span>React</span>
+            <span class="level">Intermediate</span>
+          </div>
+          <div class="skill">
+            <span>Git</span>
+            <span class="level">Pro</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Companies and People Section -->
+      <section class="companies-section">
+        <h2>Companies and People I Have Worked With</h2>
+        <p>
+          Over the years, I have had the privilege to work with a variety of
+          clients, including well-known construction companies and individuals
+          who needed personalized designs, such as posters and brand materials.
+          My diverse portfolio reflects my adaptability and commitment to
+          delivering exceptional results for every project.
+        </p>
+
+        <!-- Companies Collage -->
+        <div class="companies-grid">
+          <div class="company">
+            <img src="logo trans for dke.png" alt="Construction Company 1" />
+            <span>Dikatlego Engineering </span>
+          </div>
+          <div class="company">
+            <img src="rn4c.jpg" alt="Construction Company 2" />
+            <span>Re4nce</span>
+          </div>
+          <div class="company">
+            <img src="spcn e.jpg" alt="Construction Company 3" />
+            <span>SpearCon Engineering</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Notable Projects and Logo Design Section -->
+      <section class="logo-design-section">
+        <h2>My Journey in Logo Design</h2>
+        <p>
+          My journey in logo design has been a transformative experience that
+          blends creativity and strategy. From crafting minimalistic designs to
+          creating detailed illustrations, I’ve developed a strong ability to
+          capture the essence of brands visually. Through continuous learning
+          and practical projects, I’ve honed my skills to design logos that
+          resonate with audiences and communicate effectively.
+        </p>
+        <div class="projects-grid">
+          <img src="natamark.jpg" alt="Logo Design 1" />
+          <img src="logo2.jpg" alt="Logo Design 2" />
+          <img src="moek.jpg" alt="Logo Design 3" />
+          <img src="setlavox.jpg" alt="Logo Design 4" />
+          <img src="mk.jpg" alt="Logo Design 5" />
+        </div>
+      </section>
+
+      <!-- Certificates Section -->
+      <section class="certificates-section">
+        <h2>My SheCodes Journey</h2>
+        <p>
+          My journey with SheCodes has been an incredible experience of growth
+          and learning. From mastering foundational coding skills to building
+          real-world projects, I’ve gained confidence as a developer and
+          designer. SheCodes has empowered me to explore new technologies and
+          bring my creative ideas to life.
+        </p>
+        <a
+          href="https://www.shecodes.io/graduates/142372-lethabo-semenya"
+          target="_blank"
+          class="profile-link"
+        >
+          View My SheCodes Profile
+        </a>
+        <div class="certificates-grid">
+          <img src="adv4.png" alt="Certificate 1" />
+          <img src="introduction to coding.png" alt="Certificate 2" />
+          <img src="web dev1.png" alt="Certificate 3" />
+          <img src="wd3.png" alt="Certificate 4" />
+          <img src="artifi.png" alt="Certificate 5" />
+        </div>
+      </section>
+
+      <!-- Repositories Section -->
+      <section class="repos-section">
+        <h2>GitHub Repositories</h2>
+        <ul>
+          <li>
+            <a
+              href="https://github.com/Leethabo27/Qr-Code-Component"
+              target="_blank"
+              >Repository 1</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://github.com/Leethabo27/my-weather-app"
+              target="_blank"
+              >Repository 2</a
+            >
+          </li>
+        </ul>
+      </section>
+
+      <!-- Vercel Projects Section -->
+      <section class="vercel-section">
+        <h2>Vercel Projects</h2>
+        <ul>
+          <li>
+            <a href="https://www.futurefrontinnovators.co.za/" target="_blank"
+              >Vercel Project 1</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://vercel.com/lethabo-semenyas-projects/qr-code-component"
+              target="_blank"
+              >Vercel Project 2</a
+            >
+          </li>
+        </ul>
+      </section>
+      <!-- Testimonials and Recommendations Section -->
+      <section class="testimonials-section">
+        <h2>What People Say About Me</h2>
+        <p>
+          Here's what clients and peers have to say about my work ethic,
+          creativity, and impact in the design and development space.
+        </p>
+
+        <!-- Testimonials Collage -->
+        <div class="testimonials-grid">
+          <div class="testimonial">
+            <p>
+              "Lethabo is a true professional! Their designs perfectly captured
+              my brand’s vision."
+            </p>
+            <div class="stars">★★★★★</div>
+            <span>- Katlego Kirstern Dikatlego Engineering </span>
+          </div>
+          <div class="testimonial">
+            <p>
+              "Working with Lethabo was seamless. They deliver on time and
+              exceed expectations."
+            </p>
+            <div class="stars">★★★★★</div>
+            <span>- Sakhi M</span>
+          </div>
+          <div class="testimonial">
+            <p>
+              "A talented designer with a keen eye for detail. Highly
+              recommended!"
+            </p>
+            <div class="stars">★★★★☆</div>
+            <span>-SpearCon Engineering</span>
+          </div>
+          <div class="testimonial">
+            <p>
+              "Incredible creativity and attention to detail. My logo turned out
+              amazing!"
+            </p>
+            <div class="stars">★★★★★</div>
+            <span>- Sedrude</span>
+          </div>
+          <div class="testimonial">
+            <p>
+              "Lethabo’s designs are innovative and fresh. They bring ideas to
+              life effortlessly."
+            </p>
+            <div class="stars">★★★★★</div>
+            <span>- fORUM For Service Delivery</span>
+          </div>
+        </div>
+
+        <!-- Peer Recommendations -->
+        <div class="recommendations">
+          <h3>Recommendations from My Peers</h3>
+          <ul>
+            <li>
+              <p>
+                "Lethabo has an incredible ability to turn ideas into visually
+                striking designs. A pleasure to collaborate with!"
+              </p>
+              <span>-Thabo M</span>
+            </li>
+            <li>
+              <p>
+                "I've witnessed Lethabo's dedication and growth over the years.
+                Their work is inspiring!"
+              </p>
+              <span>- Keamogetswe G</span>
+            </li>
+            <li>
+              <p>
+                "Lethabo’s passion for design and innovation is unmatched.
+                They’re a great team player!"
+              </p>
+              <span>- Thapelo Angelo</span>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Back to Top Button -->
+      <button id="backToTop" class="back-to-top">↑</button>
+    </div>
+
+    <!-- Footer Section -->
+    <footer>
+      <p>&copy; 2025 Lethabo Semenya | All rights reserved.</p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+      // Get the back-to-top button
+      const backToTopButton = document.getElementById("backToTop");
+
+      // Show the button when the user scrolls down
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 300) {
+          backToTopButton.classList.add("show");
+        } else {
+          backToTopButton.classList.remove("show");
+        }
+      });
+
+      // Scroll to the top when the button is clicked
+      backToTopButton.addEventListener("click", () => {
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth",
+        });
+      });
+    </script>
+  </body>
+</html>

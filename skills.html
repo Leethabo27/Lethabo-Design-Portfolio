@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+    <style>
+      body {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        margin: 0;
+        background-color: #000000;
+        color: #fff;
+        font-family: Arial, sans-serif;
+      }
+
+      .content {
+        flex: 1;
+        padding: 20px;
+      }
+
+      h2,
+      h3 {
+        text-align: center;
+        margin: 20px 0;
+        color: #00d8ff;
+      }
+
+      /* Skills Section */
+      .skills-section {
+        padding: 20px;
+      }
+
+      .skills-grid {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+      }
+
+      .skill {
+        text-align: center;
+        width: 150px;
+      }
+
+      .skill i {
+        font-size: 3rem;
+        color: #00d8ff;
+        margin-bottom: 10px;
+      }
+
+      .skill-progress {
+        width: 100%;
+        background: #333;
+        height: 8px;
+        border-radius: 5px;
+        margin-top: 10px;
+        overflow: hidden;
+      }
+
+      .skill-progress div {
+        height: 100%;
+        background: linear-gradient(90deg, #00d8ff, #0400ff);
+        animation: fillProgress 2s ease-out forwards;
+      }
+
+      .skill-graphic div {
+        width: 90%;
+      }
+
+      .skill-web div {
+        width: 75%;
+      }
+
+      .skill-ux div {
+        width: 85%;
+      }
+      .skills-section,
+      .tools-section {
+        padding: 40px 20px;
+      }
+
+      h3 {
+        font-size: 2rem;
+        margin-bottom: 20px;
+      }
+
+      .skills-grid,
+      .tools-grid {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+      }
+
+      .skill,
+      .tool {
+        background: #020202;
+        padding: 20px;
+        border-radius: 10px;
+        width: 120px;
+        text-align: center;
+        transition: transform 0.3s, box-shadow 0.3s;
+        animation: glowEffect 2s ease-in-out infinite alternate;
+      }
+
+      .skill i,
+      .tool i {
+        font-size: 2rem;
+        margin-bottom: 10px;
+        color: #0400ff;
+        animation: floatIcon 2s ease-in-out infinite;
+      }
+
+      .skill:hover,
+      .tool:hover {
+        transform: scale(1.1);
+        box-shadow: 0 0 20px #00d8ff, 0 0 40px #00d8ff;
+      }
+
+      /* Timeline for Experience */
+      .experience {
+        padding: 20px;
+      }
+
+      .timeline {
+        position: relative;
+        margin: 40px 0;
+        padding: 20px 0;
+      }
+
+      .timeline::before {
+        content: "";
+        position: absolute;
+        width: 2px;
+        background: #00d8ff;
+        height: 100%;
+        left: 50%;
+        top: 0;
+        transform: translateX(-50%);
+      }
+
+      .timeline-item {
+        position: relative;
+        margin: 20px 0;
+        width: calc(50% - 30px);
+      }
+
+      .timeline-item:nth-child(odd) {
+        float: left;
+        clear: right;
+        text-align: right;
+      }
+
+      .timeline-item:nth-child(even) {
+        float: right;
+        clear: left;
+        text-align: left;
+      }
+
+      .timeline-item h4 {
+        font-size: 1.5rem;
+        color: #fff;
+      }
+
+      .timeline-item p {
+        font-size: 1rem;
+        color: #ddd;
+      }
+
+      .timeline-item::after {
+        content: "";
+        position: absolute;
+        top: 20px;
+        right: -10px;
+        width: 20px;
+        height: 20px;
+        background: #00d8ff;
+        border-radius: 50%;
+        border: 4px solid #161414;
+        animation: glowEffect 2s infinite;
+      }
+
+      .timeline-item:nth-child(even)::after {
+        right: auto;
+        left: -10px;
+      }
+
+      /* Keyframes */
+      @keyframes fillProgress {
+        from {
+          width: 0;
+        }
+        to {
+          width: 100%;
+        }
+      }
+
+      @keyframes glowEffect {
+        0%,
+        100% {
+          box-shadow: 0 0 5px #00d8ff, 0 0 10px #00d8ff;
+        }
+        50% {
+          box-shadow: 0 0 15px #00d8ff, 0 0 30px #00d8ff;
+        }
+      }
+
+      /* Responsive Design */
+      @media (max-width: 768px) {
+        .timeline-item {
+          width: calc(100% - 60px);
+          float: none;
+          text-align: center;
+        }
+
+        .timeline::before {
+          left: 10px;
+          transform: none;
+        }
+
+        .timeline-item::after {
+          left: 50%;
+          transform: translateX(-50%);
+        }
+      }
+
+      /* Footer Styling */
+      footer {
+        background-color: #070163;
+        padding: 20px 0;
+        text-align: center;
+        color: #fff;
+        font-family: "Poppins", sans-serif;
+      }
+
+      footer p {
+        margin: 0;
+        font-size: 1rem;
+      }
+
+      footer a {
+        color: #00d8ff;
+        text-decoration: none;
+      }
+
+      footer a:hover {
+        text-decoration: underline;
+        color: #ff0080;
+      }
+
+      /* Custom Cursor */
+      .cursor {
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        background-color: #00f5ff;
+        border-radius: 50%;
+        pointer-events: none;
+        transition: all 0.2s ease;
+        transform: translate(-50%, -50%);
+        z-index: 9999;
+      }
+
+      .cursor.hovered {
+        width: 50px;
+        height: 50px;
+        background-color: #ff00ff;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="cursor"></div>
+
+    <div class="content">
+      <!-- Skills Section -->
+      <section class="skills-section">
+        <h3>My Skills</h3>
+        <div class="skills-grid">
+          <div class="skill">
+            <i class="fas fa-pencil-alt"></i>
+            <p>Graphic Design</p>
+            <div class="skill-progress skill-graphic">
+              <div></div>
+            </div>
+          </div>
+          <div class="skill">
+            <i class="fas fa-code"></i>
+            <p>Web Development</p>
+            <div class="skill-progress skill-web">
+              <div></div>
+            </div>
+          </div>
+          <div class="skill">
+            <i class="fas fa-palette"></i>
+            <p>UI/UX</p>
+            <div class="skill-progress skill-ux">
+              <div></div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="skills-section">
+        <h3>Skills</h3>
+        <div class="skills-grid">
+          <div class="skill">
+            <i class="fas fa-pencil-alt"></i>
+            <p>Graphic Design</p>
+          </div>
+          <div class="skill">
+            <i class="fas fa-code"></i>
+            <p>Web Development</p>
+          </div>
+          <div class="skill">
+            <i class="fas fa-drafting-compass"></i>
+            <p>3D Visualization</p>
+          </div>
+          <div class="skill">
+            <i class="fas fa-search"></i>
+            <p>Software Testing</p>
+          </div>
+          <div class="skill">
+            <i class="fas fa-palette"></i>
+            <p>UI/UX</p>
+          </div>
+          <div class="skill">
+            <i class="fas fa-bullhorn"></i>
+            <p>Branding</p>
+          </div>
+        </div>
+      </section>
+      <!-- Tools Section -->
+      <section class="tools-section">
+        <h3>Tools I Use</h3>
+        <div class="tools-grid">
+          <div class="tool">
+            <i class="fab fa-html5"></i>
+            <p>HTML</p>
+          </div>
+          <div class="tool">
+            <i class="fab fa-css3-alt"></i>
+            <p>CSS</p>
+          </div>
+          <div class="tool">
+            <i class="fab fa-js"></i>
+            <p>JavaScript</p>
+          </div>
+          <div class="tool">
+            <i class="fab fa-react"></i>
+            <p>React</p>
+          </div>
+          <div class="tool">
+            <i class="fab fa-git"></i>
+            <p>Git</p>
+          </div>
+          <div class="tool">
+            <i class="fab fa-github"></i>
+            <p>GitHub</p>
+          </div>
+          <div class="tool">
+            <i class="fas fa-drafting-compass"></i>
+            <p>Blender</p>
+          </div>
+          <div class="tool">
+            <i class="fas fa-figma"></i>
+            <p>Figma</p>
+          </div>
+          <div class="tool">
+            <i class="fas fa-robot"></i>
+            <p>Artificial Intelligence</p>
+          </div>
+          <div class="tool">
+            <i class="fas fa-chart-line"></i>
+            <p>SEO</p>
+          </div>
+          <div class="tool">
+            <i class="fas fa-server"></i>
+            <p>Hosting</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Experience Section -->
+      <section class="experience">
+        <div class="experience-container">
+          <div class="experience-item">
+            <h3>Graphic Design</h3>
+            <p>
+              I have over X years of experience in graphic design, specializing
+              in logo creation, branding, web design, and 3D visualization. I
+              have worked with various clients to bring their visions to life,
+              ensuring high-quality and innovative designs.
+            </p>
+          </div>
+          <div class="experience-item">
+            <h3>Frontend Development</h3>
+            <p>
+              As an aspiring frontend developer, I am well-versed in HTML, CSS,
+              JavaScript, and responsive web design. I am currently expanding my
+              skills in web development, focusing on improving user experience
+              and interface design.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Experience Section -->
+      <section class="experience">
+        <h2>Experience</h2>
+        <div class="timeline">
+          <div class="timeline-item">
+            <h4>Graphic Design - Freelance</h4>
+            <p>
+              Over 3 years of creating innovative logos, branding, and web
+              design for diverse clients.
+            </p>
+          </div>
+          <div class="timeline-item">
+            <h4>Frontend Developer - Self-Learning</h4>
+            <p>
+              Expanding expertise in HTML, CSS, JavaScript, and React to build
+              responsive web applications.
+            </p>
+          </div>
+          <div class="timeline-item">
+            <h4>Software Tester</h4>
+            <p>
+              Ensuring high-quality software performance through detailed
+              testing and analysis.
+            </p>
+          </div>
+        </div>
+      </section>
+    </div>
+    <script>
+      // Custom Cursor Logic
+      const cursor = document.querySelector(".cursor");
+
+      document.addEventListener("mousemove", (e) => {
+        cursor.style.top = `${e.pageY}px`;
+        cursor.style.left = `${e.pageX}px`;
+      });
+
+      // Add hover effect to links and buttons
+      const hoverElements = document.querySelectorAll("a, .btn-glow");
+      hoverElements.forEach((el) => {
+        el.addEventListener("mouseenter", () => {
+          cursor.classList.add("hovered");
+        });
+        el.addEventListener("mouseleave", () => {
+          cursor.classList.remove("hovered");
+        });
+      });
+    </script>
+
+    <!-- Footer -->
+    <footer>
+      <p>&copy; 2025 Lethabo Semenya. All Rights Reserved.</p>
+      <p>
+        Connect with me on
+        <a
+          href="https://linkedin.com/in/lethabo-semenya-80aa81282/"
+          target="_blank"
+          >LinkedIn</a
+        >
+      </p>
+    </footer>
+  </body>
+</html>
