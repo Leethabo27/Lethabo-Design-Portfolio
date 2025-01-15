@@ -3,16 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Portfolio of Lethabo Semenya, a Graphic Designer and Frontend Developer with 3 years of experience."
-    />
-    <meta
-      name="keywords"
-      content="Graphic Design, Frontend Development, Portfolio, Lethabo Semenya"
-    />
-    <meta name="author" content="Lethabo Semenya" />
-    <title>Lethabo Semenya | Portfolio</title>
+    <title>Lethabo Semenya Portfolio</title>
 
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
 
@@ -33,8 +24,8 @@
 
     <link rel="manifest" href="site.webmanifest" />
     <link
+      href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Work+Sans:wght@300;600&display=swap"
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
     />
     <link
       rel="stylesheet"
@@ -45,125 +36,216 @@
       rel="stylesheet"
     />
     <style>
-      body {
+      /* General Reset */
+      * {
         margin: 0;
-        font-family: "Poppins", sans-serif;
-        color: #ffffff;
-        background-color: #000;
-        overflow-x: hidden;
-        transition: all 0.3s ease;
+        padding: 0;
+        box-sizing: border-box;
       }
 
-      /* Video Background */
-      .video-bg {
+      body {
+        font-family: "Work Sans", sans-serif;
+        color: #fff;
+        background-color: #000;
+        overflow-x: hidden;
+      }
+
+      /* Header */
+      header {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 1000;
+        background: rgba(2, 49, 255, 0.8);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 2rem;
+      }
+      header.small-screen {
+        background-color: #000000; /* White background for small screens */
+        color: #ffffff; /* Black text for readability */
+      }
+
+      header h1 {
+        font-family: "Great Vibes", cursive;
+        font-size: 1.5rem;
+        color: #ffffff;
+        position: relative;
+        z-index: 10;
+      }
+
+      /* Responsive Adjustments */
+      @media (max-width: 768px) {
+        header h1 {
+          font-size: 1.5rem; /* Smaller font size */
+          position: absolute; /* Allow precise positioning */
+          top: 2.5rem; /* Push below the toggle button */
+          right: 2rem; /* Adjust to fit inside the viewport */
+          color: #fff;
+        }
+      }
+
+      nav {
+        display: flex;
+        gap: 1.5rem;
+      }
+
+      nav a {
+        color: #ff0202;
+        text-decoration: none;
+        font-size: 1rem;
+        text-transform: uppercase;
+        transition: color 0.3s ease;
+      }
+
+      nav a:hover {
+        color: #fd2b10;
+      }
+
+      /* Mobile Toggle Menu */
+      .toggle-menu {
+        display: none;
+      }
+
+      @media (max-width: 768px) {
+        .toggle-menu {
+          display: flex;
+          position: fixed;
+          top: 1rem;
+          left: 1rem;
+          background: #000;
+          border: 2px solid #fff;
+          border-radius: 50%;
+          width: 50px;
+          height: 50px;
+          z-index: 1000;
+          justify-content: center;
+          align-items: center;
+          cursor: pointer;
+        }
+
+        .toggle-menu span {
+          display: block;
+          width: 25px;
+          height: 3px;
+          background: #fff;
+          margin: 4px 0;
+        }
+
+        nav {
+          display: none;
+          flex-direction: column;
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100vh;
+          background: #000;
+          justify-content: center;
+          align-items: center;
+        }
+
+        nav.active {
+          display: flex;
+        }
+      }
+
+      /* Hero Section */
+      .hero {
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 0 2rem;
+      }
+
+      .hero h1 {
+        font-size: 4rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        animation: glow 1.5s infinite alternate;
+      }
+
+      .hero p {
+        font-size: 1.5rem;
+        margin-top: 1rem;
+        color: #ffffff;
+      }
+
+      @keyframes glow {
+        from {
+          text-shadow: 0 0 10px #0026fc, 0 0 20px #0025fa, 0 0 30px #000000;
+        }
+        to {
+          text-shadow: 0 0 20px #000000, 0 0 30px #1100ff, 0 0 40px #0004fa;
+        }
+      }
+
+      /* Custom Mouse Cursor */
+      .cursor {
         position: fixed;
         top: 0;
         left: 0;
+        width: 20px;
+        height: 20px;
+        border: 2px solid #ffffff;
+        border-radius: 50%;
+        pointer-events: none;
+        transform: translate(-50%, -50%);
+        transition: transform 0.1s ease;
+        z-index: 10000;
+      }
+
+      .cursor-follow {
+        width: 50px;
+        height: 50px;
+        border: 2px solid rgba(224, 29, 4, 0.4);
+      }
+      /* Video Background Section */
+      .video-background {
+        position: relative;
+        height: 70vh; /* Adjust height as needed */
+        overflow: hidden;
+      }
+
+      .video-background video {
+        position: absolute;
+        top: 50%;
+        left: 50%;
         width: 100%;
         height: 100%;
         object-fit: cover;
-        z-index: -1;
-        filter: brightness(50%);
+        transform: translate(-50%, -50%);
+        z-index: 1;
       }
 
-      .overlay {
+      .video-overlay {
         position: absolute;
         top: 0;
         left: 0;
         width: 100%;
         height: 100%;
-        background: rgba(0, 0, 0, 0.6);
-        z-index: 1;
-      }
-
-      nav {
+        background: rgba(
+          0,
+          0,
+          0,
+          0.4
+        ); /* Slight overlay for text readability */
+        display: flex;
+        justify-content: center;
+        align-items: center;
         z-index: 2;
       }
 
-      .navbar-dark .navbar-toggler {
-        background-color: #0e12ff;
-      }
-
-      .nav-link {
-        color: #e2e5ff !important;
-        font-weight: bold;
-        transition: color 0.3s ease;
-      }
-
-      .nav-link:hover {
-        color: #00f5ff !important;
-      }
-
-      .main-content {
-        z-index: 2;
-        position: relative;
+      .video-overlay h2 {
+        color: #fff;
+        font-size: 2.5rem;
+        font-weight: 600;
         text-align: center;
-        margin-top: 15vh;
-        animation: fadeIn 1.5s ease-out;
+        font-family: "Great Vibes", cursive;
       }
-
-      /* Animation for FadeIn */
-      @keyframes fadeIn {
-        0% {
-          opacity: 0;
-        }
-        100% {
-          opacity: 1;
-        }
-      }
-
-      h1 {
-        font-size: 3rem;
-        text-shadow: 0 0 10px #00f, 0 0 20px #0ff;
-      }
-
-      .typewrite {
-        color: rgb(255, 255, 255);
-        font-weight: bold;
-        font-size: 4rem;
-        text-shadow: 0 0 10px rgb(39, 0, 145), 0 0 20px #0ff, 0 0 30px #00f;
-        letter-spacing: 2px;
-        animation: glow 1.5s infinite alternate;
-      }
-
-      /* Glowing effect for typewriter text */
-      @keyframes glow {
-        0% {
-          text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #00f,
-            0 0 40px #00ff7f, 0 0 50px #00f, 0 0 75px #0ff;
-        }
-        100% {
-          text-shadow: 0 0 10px #f00, 0 0 20px #f00, 0 0 30px #ff7f00,
-            0 0 40px #ff0000, 0 0 50px #ff0044, 0 0 75px #ff0077;
-        }
-      }
-
-      .btn-glow {
-        background: linear-gradient(to right, #00f, #0ff);
-        color: #ffffff;
-        border: none;
-        padding: 0.75rem 1.5rem;
-        border-radius: 50px;
-        text-transform: uppercase;
-        font-weight: bold;
-        box-shadow: 0 0 10px rgb(17, 0, 255), 0 0 20px rgb(4, 0, 255);
-        transition: all 0.3s ease;
-      }
-
-      .btn-glow:hover {
-        background: rgb(25, 0, 255);
-        box-shadow: 0 0 15px rgb(17, 0, 255), 0 0 25px rgb(0, 4, 255);
-      }
-
-      /* Projects Section */
-      #projects {
-        z-index: 2;
-        position: relative;
-        margin-top: 5rem;
-        margin-bottom: 2rem;
-        padding: 1rem;
-      }
-
       /* Project Cards */
       .project-card {
         height: auto;
@@ -203,7 +285,7 @@
         text-transform: uppercase;
         letter-spacing: 1px;
         margin-bottom: 0.5rem;
-        text-shadow: 0 0 5px #00f, 0 0 10px #0ff;
+        text-shadow: 0 0 5px rgb(0, 0, 0), 0 0 10px rgb(17, 0, 255);
       }
 
       .project-card .card-text {
@@ -212,11 +294,150 @@
         line-height: 1.6;
         text-align: justify;
       }
+      /* Projects Section */
+      .projects {
+        display: flex;
+        justify-content: space-between;
+        gap: 2rem;
+        margin: 4rem 0;
+      }
 
-      /* Footer */
-      footer {
-        background-color: #000000;
+      .project-card {
+        position: relative;
+        width: 45%;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0px 4px 12px rgba(5, 1, 255, 0.1);
+      }
+
+      .project-video {
+        width: 100%;
+        height: 100%;
+        background-color: #000;
+      }
+
+      .project-video video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .project-info {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        padding: 1.5rem;
+        background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
         color: #fff;
+        text-align: center;
+      }
+
+      .project-info h2 {
+        font-size: 2rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .project-info p {
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
+      }
+
+      .project-link {
+        color: #fff;
+        font-weight: 600;
+        text-decoration: none;
+        padding: 0.5rem 1.5rem;
+        background-color: #0206ff;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+      }
+
+      .project-link:hover {
+        background-color: #1100ff;
+      }
+
+      @media (max-width: 768px) {
+        .projects {
+          flex-direction: column;
+          gap: 2rem;
+        }
+
+        .project-card {
+          width: 100%;
+        }
+      }
+      /* Welcome Video Section */
+      .welcome-video-section {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        position: relative;
+        padding: 0 1rem; /* Adds padding to prevent text cutoff on small screens */
+        overflow: hidden; /* Ensures no overflow */
+        background-color: #000; /* Fallback background color */
+      }
+
+      /* Additional Video Section */
+      .additional-video-section {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        position: relative;
+        overflow: hidden;
+        background-color: #000142; /* Fallback background color */
+      }
+
+      /* Video Background */
+      .additional-video-section .video-background video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: -1; /* Places the video behind the text */
+      }
+
+      /* Overlay Content */
+      .additional-video-section .video-overlay {
+        text-align: center;
+        color: #fff;
+        z-index: 1; /* Places content above the video */
+        padding: 0 2rem;
+      }
+
+      .additional-video-section .video-overlay h1 {
+        font-size: 3rem;
+        font-weight: bold;
+        color: rgb(255, 255, 255); /* Blue color for title */
+        text-shadow: 0 0 10px #00f, 0 0 20px #00f, 0 0 30px #00f;
+        margin-bottom: 1rem;
+      }
+
+      .additional-video-section .video-overlay p {
+        font-size: 1.5rem;
+        line-height: 1.6;
+        color: #fff;
+        text-shadow: 0 0 5px #fffdfd;
+      }
+
+      /* Responsive Design */
+      @media (max-width: 768px) {
+        .additional-video-section .video-overlay h1 {
+          font-size: 2rem;
+        }
+
+        .additional-video-section .video-overlay p {
+          font-size: 1rem;
+        }
+      }
+
+      footer {
+        background-color: #000105;
+        color: #ffffff;
         padding: 1rem 0;
         text-align: center;
       }
@@ -229,7 +450,7 @@
 
       .social-links a {
         font-size: 1.5rem;
-        color: rgb(0, 26, 255);
+        color: rgb(2, 19, 255);
         transition: color 0.3s ease;
       }
 
@@ -243,107 +464,80 @@
           font-size: 3rem; /* Smaller text for mobile */
         }
       }
-
-      /* Custom Cursor */
-      .cursor {
-        position: absolute;
-        width: 20px;
-        height: 20px;
-        background-color: #00f5ff;
-        border-radius: 50%;
-        pointer-events: none;
-        transition: all 0.2s ease;
-        transform: translate(-50%, -50%);
-        z-index: 9999;
-      }
-
-      .cursor.hovered {
-        width: 50px;
-        height: 50px;
-        background-color: #0400ff;
-      }
     </style>
   </head>
+
   <body>
+    <!-- Custom Cursor -->
     <div class="cursor"></div>
 
-    <video autoplay muted loop class="video-bg">
-      <source src="Lethabo Semenya Graphic Designer.mp4" type="video/mp4" />
-      Your browser does not support the video tag.
-    </video>
-    <div class="overlay"></div>
+    <header>
+      <h1>Lethabo Semenya</h1>
+      <div class="toggle-menu" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <nav id="navMenu">
+        <a class="nav-link" href="about-me.html">About Me</a>
+        <a class="nav-link" href="projects.html">Projects</a>
+        <a class="nav-link" href="contact.html">Contact</a>
+        <a class="nav-link" href="skills.html">Skills & Experience</a>
+      </nav>
+    </header>
 
-    <nav class="navbar navbar-expand-lg navbar-dark">
-      <div class="container">
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ms-auto">
-           <li class="nav-item">
-  <a class="nav-link" href="/about-me">About Me</a>
-</li>
-<li class="nav-item">
-  <a class="nav-link" href="/projects">Projects</a>
-</li>
-<li class="nav-item">
-  <a class="nav-link" href="/contact">Contact</a>
-</li>
-<li class="nav-item">
-  <a class="nav-link" href="/skills">Skills & Experience</a>
-</li>
+    <!-- Hero Section -->
+    <section class="hero">
+      <h1>Hi, I'm Lethabo Semenya</h1>
+      <p>An Autodidact Graphic Designer and Aspiring Frontend Developer</p>
+    </section>
 
-          </ul>
+    <section class="video-background">
+      <video autoplay loop muted playsinline>
+        <source src="background2.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+
+      <div class="video-overlay">
+        <h1>Explore Another Dimension</h1>
+        <p>Step into a creative world, where imagination meets design.</p>
+      </div>
+    </section>
+
+    <section class="projects" id="projects">
+      <div class="project-card">
+        <div class="project-video">
+          <video autoplay loop muted>
+            <source src="vid1.mp4" type="video/mp4" />
+          </video>
+        </div>
+        <div class="project-info">
+          <h2>Blender Gallery Showcase: Art by Lethabo Semenya</h2>
+          <a href="projects.html" class="project-link">View Details</a>
         </div>
       </div>
-    </nav>
 
-    <div class="main-content">
-      <h1>
-        Hi, I'm
-        <span
-          class="typewrite"
-          data-text='["Lethabo Semenya", "a Graphic Designer", "an Aspiring Frontend Developer"]'
-        ></span>
-      </h1>
-      <a href="projects" class="btn-glow mt-4">Explore</a>
-    </div>
+      <div class="project-card">
+        <div class="project-video">
+          <video autoplay loop muted>
+            <source src="vid2.mp4" type="video/mp4" />
+          </video>
+        </div>
+        <div class="project-info">
+          <h2>Close-Up of My Digital Art Gallery</h2>
+          <a href="projects.html" class="project-link">View Details</a>
+        </div>
+      </div>
+    </section>
 
-    <section id="projects" class="container my-5">
-      <div class="row">
-        <div class="col-md-4 mb-4">
-          <div class="card project-card">
-            <img src="image3.jpg" class="card-img-top" alt="Project 1" />
-            <div class="card-body">
-              <h5 class="card-title">Sentinels of the Void</h5>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4 mb-4">
-          <div class="card project-card">
-            <img
-              src="miles g morales.jpg"
-              class="card-img-top"
-              alt="Project 2"
-            />
-            <div class="card-body">
-              <h5 class="card-title">The Prowler's Realm</h5>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4 mb-4">
-          <div class="card project-card">
-            <img src="miles morales.jpg" class="card-img-top" alt="Project 3" />
-            <div class="card-body">
-              <h5 class="card-title">Spider-Verse Skyline</h5>
-            </div>
-          </div>
-        </div>
+    <!-- Video Background Section -->
+    <section class="video-background">
+      <video autoplay loop muted playsinline>
+        <source src="background.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+      <div class="video-overlay">
+        <h2>Creative. Passionate. Bold.</h2>
       </div>
     </section>
 
@@ -382,51 +576,28 @@
       <p>&copy; 2025 Lethabo Semenya. All rights reserved.</p>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js"></script>
     <script>
-      // Custom Cursor Logic
+      // Toggle Menu
+      const toggleMenu = () => {
+        const navMenu = document.getElementById("navMenu");
+        navMenu.classList.toggle("active");
+      };
+
+      // Custom Mouse Cursor
       const cursor = document.querySelector(".cursor");
 
       document.addEventListener("mousemove", (e) => {
-        cursor.style.top = `${e.pageY}px`;
-        cursor.style.left = `${e.pageX}px`;
+        cursor.style.left = `${e.clientX}px`;
+        cursor.style.top = `${e.clientY}px`;
       });
 
-      // Add hover effect to links and buttons
-      const hoverElements = document.querySelectorAll("a, .btn-glow");
-      hoverElements.forEach((el) => {
-        el.addEventListener("mouseenter", () => {
-          cursor.classList.add("hovered");
-        });
-        el.addEventListener("mouseleave", () => {
-          cursor.classList.remove("hovered");
-        });
+      document.addEventListener("mousedown", () => {
+        cursor.classList.add("cursor-follow");
       });
 
-      const typewrite = document.querySelector(".typewrite");
-      const texts = JSON.parse(typewrite.getAttribute("data-text"));
-      let i = 0,
-        j = 0,
-        isDeleting = false;
-
-      function typeEffect() {
-        let currentText = texts[j];
-        typewrite.textContent = isDeleting
-          ? currentText.substring(0, i--)
-          : currentText.substring(0, i++);
-        if (!isDeleting && i === currentText.length) {
-          isDeleting = true;
-          setTimeout(typeEffect, 1500);
-        } else if (isDeleting && i === 0) {
-          isDeleting = false;
-          j = (j + 1) % texts.length;
-          setTimeout(typeEffect, 500);
-        } else {
-          setTimeout(typeEffect, isDeleting ? 100 : 200);
-        }
-      }
-      typeEffect();
+      document.addEventListener("mouseup", () => {
+        cursor.classList.remove("cursor-follow");
+      });
     </script>
   </body>
 </html>
