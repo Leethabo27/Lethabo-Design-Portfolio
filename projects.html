@@ -360,6 +360,116 @@
         border-radius: 5px;
         margin-left: 10px;
       }
+      /* Web/App Development Section */
+      .web-app-development-section {
+        padding: 50px 20px;
+        text-align: center;
+        color: #bfcbff;
+        position: relative;
+        z-index: 1;
+      }
+
+      .web-app-development-section h7 {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+      }
+
+      .web-app-development-section p {
+        font-size: 1.2rem;
+        max-width: 800px;
+        margin: 0 auto 30px;
+        line-height: 1.6;
+      }
+
+      .projects-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .project-card {
+        background-color: #000000;
+        border-radius: 10px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        text-align: center;
+      }
+
+      .project-card img {
+        width: 100%;
+        height: auto;
+        transition: transform 0.3s ease;
+      }
+
+      .project-card p {
+        padding: 15px;
+        font-size: 1rem;
+      }
+
+      .view-demo {
+        display: inline-block;
+        margin: 15px 0;
+        font-size: 1.2rem;
+        color: #007bff;
+        text-decoration: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        background-color: #fff;
+        border: 2px solid #007bff;
+        transition: all 0.3s ease;
+      }
+
+      .view-demo:hover {
+        background-color: #007bff;
+        color: #fff;
+        border-color: #007bff;
+      }
+
+      .project-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      }
+
+      .project-card:hover img {
+        transform: scale(1.05);
+      }
+
+      /* Responsive Design */
+      @media (max-width: 768px) {
+        .web-app-development-section h7 {
+          font-size: 2rem;
+        }
+
+        .web-app-development-section p {
+          font-size: 1.1rem;
+        }
+
+        .projects-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+
+        .project-card {
+          font-size: 0.9rem;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .projects-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .web-app-development-section h7 {
+          font-size: 1.8rem;
+        }
+
+        .view-demo {
+          font-size: 1rem;
+          padding: 8px 15px;
+        }
+      }
 
       /* Repositories and Vercel Section */
       .repos-section,
@@ -1016,38 +1126,18 @@
           <div class="poster-gallery">
             <div class="poster-item">
               <img src="pster1.jpg" alt="Sedrude Pty Ltd" />
-              <p>
-                Poster Design 1: A creative concept highlighting bold typography
-                and vibrant colors for an event promotion.
-              </p>
             </div>
             <div class="poster-item">
               <img src="pster5.jpg" alt="Poster Design 2" />
-              <p>
-                Poster Design 2: A minimalistic approach with clean lines and
-                sophisticated graphics for a corporate client.
-              </p>
             </div>
             <div class="poster-item">
               <img src="pster6.jpg" alt="Poster Design 3" />
-              <p>
-                Poster Design 3: An energetic and dynamic design for a music
-                festival, combining photography and abstract elements.
-              </p>
             </div>
             <div class="poster-item">
               <img src="pster7.jpg" alt="Poster Design 4" />
-              <p>
-                Poster Design 4: A modern and sleek design for a tech
-                conference, using geometric shapes and bold fonts.
-              </p>
             </div>
             <div class="poster-item">
               <img src="pstr3.jpg" alt="Poster Design 5" />
-              <p>
-                Poster Design 5: A stylish design for a fashion event, with
-                elegant typography and a high-fashion aesthetic.
-              </p>
             </div>
           </div>
         </div>
@@ -1072,7 +1162,6 @@
             </video>
           </div>
 
-          <!-- Video Section 2 -->
           <div class="video-section">
             <h3>Building Video Ad</h3>
             <p class="video-description">
@@ -1132,6 +1221,52 @@
           <img src="web dev1.png" alt="Certificate 3" />
           <img src="wd3.png" alt="Certificate 4" />
           <img src="artifi.png" alt="Certificate 5" />
+        </div>
+      </section>
+
+      <!-- Web/App Development Section -->
+      <section class="web-app-development-section">
+        <h7>Web/App Dev</h7>
+        <p>
+          Here are some of my frontend development projects where I've applied
+          my skills in creating interactive and responsive web applications.
+          Each project demonstrates my proficiency in HTML, CSS, JavaScript, and
+          various front-end frameworks.
+        </p>
+        <div class="projects-grid">
+          <!-- Project 1 -->
+          <div class="project-card">
+            <img src="rsp.jpeg" alt="Project 1" />
+            <p>Reciept Sharing Plattform</p>
+            <a
+              href="https://playful-melba-d07254.netlify.app/"
+              target="_blank"
+              class="view-demo"
+              >View Demo</a
+            >
+          </div>
+          <!-- Project 2 -->
+          <div class="project-card">
+            <img src="task ma.jpeg" alt="Project 2" />
+            <p>Task Management App</p>
+            <a
+              href="https://luxury-bienenstitch-3d2e42.netlify.app/"
+              target="_blank"
+              class="view-demo"
+              >View Demo</a
+            >
+          </div>
+          <!-- Project 3 -->
+          <div class="project-card">
+            <img src="nfc.jpeg" alt="Project 3" />
+            <p>Netlfix Clone</p>
+            <a
+              href="https://bucolic-froyo-6861c8.netlify.app/"
+              target="_blank"
+              class="view-demo"
+              >View Demo</a
+            >
+          </div>
         </div>
       </section>
 
