@@ -153,7 +153,7 @@
       /* Web/App Showcase Section */
       .web-app-showcase {
         padding: 50px 20px;
-        background-color: #1d1d1d;
+        background-color: #000000;
         text-align: center;
         color: #fff;
         position: relative;
@@ -163,7 +163,7 @@
       .web-app-showcase h7 {
         font-size: 2.5rem;
         margin-bottom: 20px;
-        color: #003366; /* Dark Blue */
+        color: #ffffff; /* Dark Blue */
       }
 
       .showcase-grid {
@@ -202,26 +202,26 @@
       }
 
       .view-demo-link:hover {
-        background-color: #007bff;
+        background-color: #000000;
       }
 
       .view-projects-link {
         display: inline-block;
         margin-top: 30px;
         font-size: 1.5rem;
-        color: #007bff;
+        color: #ffffff;
         text-decoration: none;
         padding: 12px 24px;
         border-radius: 5px;
         background-color: #003366;
-        border: 2px solid #007bff;
+        border: 2px solid #000000;
         transition: all 0.3s ease;
       }
 
       .view-projects-link:hover {
-        background-color: #007bff;
+        background-color: #000000;
         color: #fff;
-        border-color: #007bff;
+        border-color: #000000;
       }
 
       /* Hover Effects */
@@ -289,6 +289,23 @@
         font-size: 1.5rem;
         margin-top: 1rem;
         color: #ffffff;
+        font-weight: bold;
+        text-shadow: 0 0 5px #00f, 0 0 10px #00f, 0 0 20px #00f, 0 0 40px #00f;
+        animation: glow 2s infinite;
+      }
+
+      /* Define the animation */
+      @keyframes glow {
+        0% {
+          text-shadow: 0 0 5px #00f, 0 0 10px #00f, 0 0 20px #00f, 0 0 40px #00f;
+        }
+        50% {
+          text-shadow: 0 0 10px #00f, 0 0 20px #00f, 0 0 30px #00f,
+            0 0 50px #00f;
+        }
+        100% {
+          text-shadow: 0 0 5px #00f, 0 0 10px #00f, 0 0 20px #00f, 0 0 40px #00f;
+        }
       }
 
       @keyframes glow {
@@ -540,6 +557,60 @@
         color: #fff;
         text-shadow: 0 0 5px #fffdfd;
       }
+      /* Scroll Arrows */
+      .scroll-arrow {
+        position: fixed;
+        width: 40px;
+        height: 40px;
+        border-left: 5px solid blue;
+        border-bottom: 5px solid blue;
+        cursor: pointer;
+        z-index: 1000;
+        transition: transform 0.2s ease, opacity 0.2s ease;
+      }
+
+      /* Down Arrow */
+      .scroll-down {
+        bottom: 20px; /* Position at the bottom */
+        right: 20px; /* Position on the right edge */
+        transform: rotate(45deg);
+        animation: bounce-down 1.5s infinite;
+      }
+
+      /* Up Arrow */
+      .scroll-up {
+        top: 20px; /* Position at the top */
+        right: 20px; /* Position on the right edge */
+        transform: rotate(225deg);
+        display: none; /* Hidden initially */
+      }
+
+      /* Arrow Hover Effect */
+      .scroll-arrow:hover {
+        transform: scale(1.1);
+        opacity: 0.8;
+      }
+
+      /* Bounce Animations */
+      @keyframes bounce-down {
+        0%,
+        100% {
+          transform: rotate(45deg) translateY(0);
+        }
+        50% {
+          transform: rotate(45deg) translateY(10px);
+        }
+      }
+
+      @keyframes bounce-up {
+        0%,
+        100% {
+          transform: rotate(225deg) translateY(0);
+        }
+        50% {
+          transform: rotate(225deg) translateY(-10px);
+        }
+      }
 
       /* Responsive Design */
       @media (max-width: 768px) {
@@ -608,6 +679,14 @@
       <h1>Hi, I'm Lethabo Semenya</h1>
       <p>An Autodidact Graphic Designer and Aspiring Frontend Developer</p>
     </section>
+    <!-- Scroll Down Arrow -->
+    <div
+      class="scroll-arrow scroll-down"
+      onclick="scrollToSection('projects')"
+    ></div>
+
+    <!-- Scroll Up Arrow -->
+    <div class="scroll-arrow scroll-up" onclick="scrollToTop()"></div>
 
     <section class="video-background">
       <video autoplay loop muted playsinline>
@@ -650,7 +729,7 @@
       <div class="showcase-grid">
         <!-- Project 1 -->
         <div class="showcase-card">
-          <img src="websit2.jpeg" alt="Project 1" />
+          <img src="netflix cloneee.jpg" alt="Project 1" />
           <a
             href="https://bucolic-froyo-6861c8.netlify.app/"
             class="view-demo-link"
@@ -659,7 +738,7 @@
         </div>
         <!-- Project 2 -->
         <div class="showcase-card">
-          <img src="project web1.jpeg" alt="Project 2" />
+          <img src="recipe app.jpg" alt="Project 2" />
           <a
             href="https://playful-melba-d07254.netlify.app/"
             class="view-demo-link"
@@ -668,7 +747,7 @@
         </div>
         <!-- Project 3 -->
         <div class="showcase-card">
-          <img src="website3.jpeg" alt="Project 3" />
+          <img src="task m app.jpg" alt="Project 3" />
           <a
             href="https://luxury-bienenstitch-3d2e42.netlify.app/"
             class="view-demo-link"
@@ -690,6 +769,7 @@
       </div>
     </section>
 
+    <div class="scroll-arrow scroll-up" onclick="scrollToTop()"></div>
     <footer>
       <div class="social-links">
         <a href="https://dribbble.com/Lethabo_25" target="_blank"
@@ -746,6 +826,37 @@
 
       document.addEventListener("mouseup", () => {
         cursor.classList.remove("cursor-follow");
+      });
+
+      // Scroll to a specific section
+      function scrollToSection(sectionId) {
+        const section = document.getElementById(sectionId);
+        if (section) {
+          section.scrollIntoView({ behavior: "smooth" });
+        }
+      }
+
+      // Scroll to a specific section
+      function scrollToSection(sectionId) {
+        const section = document.getElementById(sectionId);
+        if (section) {
+          section.scrollIntoView({ behavior: "smooth" });
+        }
+      }
+
+      // Scroll to the top of the page
+      function scrollToTop() {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }
+
+      // Show/Hide the Scroll-Up Arrow
+      window.addEventListener("scroll", () => {
+        const scrollUpArrow = document.querySelector(".scroll-up");
+        if (window.scrollY > 200) {
+          scrollUpArrow.style.display = "block";
+        } else {
+          scrollUpArrow.style.display = "none";
+        }
       });
     </script>
   </body>
