@@ -535,38 +535,6 @@
         transform: scale(1.1);
         box-shadow: 0 0 20px #fff;
       }
-      #poster-design-experience {
-        padding: 50px 20px;
-        background-color: #111;
-        color: #fff;
-        text-align: center;
-      }
-
-      .poster-gallery {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 20px;
-        margin-top: 40px;
-      }
-
-      .poster-item img {
-        width: 100%;
-        height: auto;
-        border-radius: 8px;
-        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
-      }
-
-      .poster-item p {
-        margin-top: 10px;
-        font-size: 16px;
-        color: #bbb;
-      }
-
-      h4 {
-        font-size: 28px;
-        font-weight: bold;
-        color: #0066cc;
-      }
 
       /* Logo Design Section */
       .logo-design-section {
@@ -751,6 +719,70 @@
         padding: 5px 10px;
         border-radius: 5px;
         display: inline-block;
+      }
+
+      /* 3D GALLERY - Separate Styles */
+      #threeD-gallery {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100vh;
+        perspective: 1000px;
+        background: black;
+        color: white;
+      }
+
+      .threeD-gallery-title {
+        font-size: 2rem;
+        font-weight: bold;
+        text-transform: uppercase;
+        margin-bottom: 20px;
+        text-align: center;
+      }
+
+      .threeD-gallery {
+        position: relative;
+        width: 300px;
+        height: 300px;
+        transform-style: preserve-3d;
+        animation: rotateGallery 10s infinite linear;
+      }
+
+      .threeD-container {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        transform-style: preserve-3d;
+      }
+
+      .threeD-container span {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        transform-origin: center;
+      }
+
+      .threeD-container span img {
+        width: 200px;
+        height: 250px;
+        border-radius: 10px;
+        object-fit: cover;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        box-shadow: 0 5px 15px rgba(255, 255, 255, 0.3);
+      }
+
+      @keyframes rotateGallery {
+        from {
+          transform: rotateY(0deg);
+        }
+        to {
+          transform: rotateY(360deg);
+        }
       }
 
       /* Companies Section */
@@ -1118,27 +1150,25 @@
         </div>
       </section>
 
-      <section id="poster-design-experience">
-        <div class="container">
-          <h4>My Experience as a Poster Designer</h4>
-
-          <!-- Poster Section -->
-          <div class="poster-gallery">
-            <div class="poster-item">
-              <img src="pster1.jpg" alt="Sedrude Pty Ltd" />
-            </div>
-            <div class="poster-item">
-              <img src="pster5.jpg" alt="Poster Design 2" />
-            </div>
-            <div class="poster-item">
-              <img src="pster6.jpg" alt="Poster Design 3" />
-            </div>
-            <div class="poster-item">
-              <img src="pster7.jpg" alt="Poster Design 4" />
-            </div>
-            <div class="poster-item">
-              <img src="pstr3.jpg" alt="Poster Design 5" />
-            </div>
+      <section id="threeD-gallery">
+        <h2 class="threeD-gallery-title">Poster Design</h2>
+        <div class="threeD-gallery">
+          <div class="threeD-container">
+            <span style="--i: 1"
+              ><img src="pster1.jpg" alt="Sedrude Pty Ltd"
+            /></span>
+            <span style="--i: 2"
+              ><img src="pster5.jpg" alt="Poster Design 2"
+            /></span>
+            <span style="--i: 3"
+              ><img src="pster6.jpg" alt="Poster Design 3"
+            /></span>
+            <span style="--i: 4"
+              ><img src="pster7.jpg" alt="Poster Design 4"
+            /></span>
+            <span style="--i: 5"
+              ><img src="pstr3.jpg" alt="Poster Design 5"
+            /></span>
           </div>
         </div>
       </section>
@@ -1413,6 +1443,17 @@
         }
       });
 
+      document.addEventListener("DOMContentLoaded", () => {
+        const images = document.querySelectorAll(".threeD-container span");
+        const totalImages = images.length;
+        const angle = 360 / totalImages;
+
+        images.forEach((img, index) => {
+          const rotation = angle * index;
+          img.style.transform = `rotateY(${rotation}deg) translateZ(300px)`;
+        });
+      });
+
       // Scroll to the top when the button is clicked
       backToTopButton.addEventListener("click", () => {
         window.scrollTo({
@@ -1423,3 +1464,4 @@
     </script>
   </body>
 </html>
+
