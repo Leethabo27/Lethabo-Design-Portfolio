@@ -721,17 +721,19 @@
         display: inline-block;
       }
 
-      /* 3D GALLERY - Separate Styles */
+      /* 3D GALLERY - Responsive */
       #threeD-gallery {
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
         width: 100%;
-        height: 100vh;
-        perspective: 1000px;
+        min-height: 100vh;
+        perspective: 1200px;
         background: black;
         color: white;
+        text-align: center;
+        padding: 20px;
       }
 
       .threeD-gallery-title {
@@ -739,15 +741,15 @@
         font-weight: bold;
         text-transform: uppercase;
         margin-bottom: 20px;
-        text-align: center;
       }
 
       .threeD-gallery {
         position: relative;
-        width: 300px;
-        height: 300px;
+        width: 80vw;
+        max-width: 400px;
+        height: 400px;
         transform-style: preserve-3d;
-        animation: rotateGallery 10s infinite linear;
+        animation: rotateGallery 12s infinite linear;
       }
 
       .threeD-container {
@@ -765,8 +767,9 @@
       }
 
       .threeD-container span img {
-        width: 200px;
-        height: 250px;
+        width: 80%;
+        max-width: 180px;
+        height: auto;
         border-radius: 10px;
         object-fit: cover;
         position: absolute;
@@ -776,12 +779,37 @@
         box-shadow: 0 5px 15px rgba(255, 255, 255, 0.3);
       }
 
+      /* Rotation animation */
       @keyframes rotateGallery {
         from {
           transform: rotateY(0deg);
         }
         to {
           transform: rotateY(360deg);
+        }
+      }
+
+      /* 🌍 Responsive Adjustments */
+      @media screen and (max-width: 768px) {
+        .threeD-gallery {
+          width: 90vw;
+          height: 300px;
+        }
+
+        .threeD-container span img {
+          width: 70%;
+          max-width: 150px;
+        }
+      }
+
+      @media screen and (max-width: 480px) {
+        .threeD-gallery {
+          height: 250px;
+        }
+
+        .threeD-container span img {
+          width: 60%;
+          max-width: 120px;
         }
       }
 
@@ -1151,7 +1179,7 @@
       </section>
 
       <section id="threeD-gallery">
-        <h2 class="threeD-gallery-title">Poster Design</h2>
+        <h2 class="threeD-gallery-title">3D GALLERY</h2>
         <div class="threeD-gallery">
           <div class="threeD-container">
             <span style="--i: 1"
@@ -1447,10 +1475,20 @@
         const images = document.querySelectorAll(".threeD-container span");
         const totalImages = images.length;
         const angle = 360 / totalImages;
+        const radius = window.innerWidth < 768 ? 200 : 300; // Responsive radius
 
         images.forEach((img, index) => {
           const rotation = angle * index;
-          img.style.transform = `rotateY(${rotation}deg) translateZ(300px)`;
+          img.style.transform = `rotateY(${rotation}deg) translateZ(${radius}px)`;
+        });
+
+        // Update on resize
+        window.addEventListener("resize", () => {
+          const newRadius = window.innerWidth < 768 ? 200 : 300;
+          images.forEach((img, index) => {
+            const rotation = angle * index;
+            img.style.transform = `rotateY(${rotation}deg) translateZ(${newRadius}px)`;
+          });
         });
       });
 
@@ -1464,4 +1502,3 @@
     </script>
   </body>
 </html>
-
