@@ -460,24 +460,25 @@
         cursor: pointer;
       }
 
-      /* Interactive Text */
-      .interactive-text p {
-        font-size: 1.2rem;
-        background: linear-gradient(to right, #f8f8fa, #0400ff);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        animation: textGlow 3s infinite;
-      }
+      
+.interactive-text p {
+    font-size: 1.2rem;
+    background: linear-gradient(to right, #f8f8fa, #0400ff);
+    background-clip: text; /* Standard property */
+    -webkit-background-clip: text; /* WebKit-specific */
+    -webkit-text-fill-color: transparent;
+    color: transparent; /* Fallback for unsupported browsers */
+    animation: textGlow 3s infinite;
+}
 
-      @keyframes textGlow {
-        0%,
-        100% {
-          text-shadow: 0 0 10px #00bfff, 0 0 20px #0400ff;
-        }
-        50% {
-          text-shadow: 0 0 20px #00bfff, 0 0 40px #0400ff;
-        }
-      }
+@keyframes textGlow {
+    0%, 100% {
+        text-shadow: 0 0 10px #0400ff, 0 0 20px #0400ff;
+    }
+    50% {
+        text-shadow: 0 0 5px #0400ff, 0 0 10px #0400ff;
+    }
+}
 
       footer {
         padding: 20px;
