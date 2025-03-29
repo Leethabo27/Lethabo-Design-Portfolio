@@ -50,6 +50,84 @@
         overflow-x: hidden;
       }
 
+      /* Hero Section */
+      .hero {
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        background: url("your-background-image.jpg") no-repeat center
+          center/cover;
+        color: #ffffff;
+        position: relative;
+      }
+
+      /* Dark overlay for better text contrast */
+      .hero::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.7);
+      }
+
+      /* Hero content */
+      .hero-content {
+        position: relative;
+        z-index: 2;
+      }
+
+      /* Hello text */
+      .hello {
+        font-size: 1.2rem;
+        font-weight: bold;
+        color: #ce0090;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+      }
+
+      /* Main Heading */
+      .hero h1 {
+        font-size: 4rem;
+        font-weight: bold;
+        text-transform: uppercase;
+        margin: 0;
+      }
+
+      .highlight {
+        color: #ffffff;
+      }
+
+      /* Subtitle */
+      .subtext {
+        font-size: 1.2rem;
+        margin-top: 1rem;
+        color: #ffffff;
+        font-weight: bold;
+        letter-spacing: 1px;
+      }
+
+      /* Button */
+      .btn {
+        display: inline-block;
+        margin-top: 1.5rem;
+        padding: 12px 24px;
+        border: 2px solid #ffffff;
+        text-decoration: none;
+        color: #ffffff;
+        font-weight: bold;
+        text-transform: uppercase;
+        transition: 0.3s ease;
+      }
+
+      .btn:hover {
+        background: #ff139d;
+        color: #ffffff;
+      }
+
       /* Header */
       header {
         position: fixed;
@@ -92,7 +170,7 @@
       }
 
       nav a {
-        color: #ff0202;
+        color: #ff02c8;
         text-decoration: none;
         font-size: 1rem;
         text-transform: uppercase;
@@ -100,7 +178,7 @@
       }
 
       nav a:hover {
-        color: #fd2b10;
+        color: #fd10a2;
       }
 
       /* Mobile Toggle Menu */
@@ -155,7 +233,7 @@
         padding: 50px 20px;
         background-color: #000000;
         text-align: center;
-        color: #fff;
+        color: #ffffff;
         position: relative;
         z-index: 1;
       }
@@ -213,7 +291,7 @@
         text-decoration: none;
         padding: 12px 24px;
         border-radius: 5px;
-        background-color: #003366;
+        background-color: #ff16b1;
         border: 2px solid #000000;
         transition: all 0.3s ease;
       }
@@ -264,6 +342,83 @@
           padding: 8px 15px;
         }
       }
+      .website-projects {
+        text-align: center;
+        padding: 4rem 2rem;
+        background: linear-gradient(
+          to bottom,
+          #ffffff,
+          #f0f0f0
+        ); /* White to Grey */
+        color: #000;
+      }
+
+      .website-gallery {
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+        flex-wrap: wrap;
+      }
+
+      .website-item {
+        position: relative;
+        width: 400px;
+        cursor: pointer;
+        background-color: #fff; /* White background for each item */
+        padding: 1rem;
+        border-radius: 10px;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease-in-out;
+      }
+
+      .website-item img {
+        width: 100%;
+        border-radius: 10px;
+      }
+
+      .website-item:hover {
+        transform: scale(1.05);
+      }
+
+      .overlay {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: rgba(0, 0, 0, 0.7);
+        color: white;
+        padding: 1rem;
+        opacity: 0;
+        transition: opacity 0.3s ease-in-out;
+        border-radius: 10px;
+      }
+
+      .website-item:hover .overlay {
+        opacity: 1;
+      }
+
+      .overlay h3 {
+        font-size: 1.5rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .overlay p {
+        font-size: 1rem;
+      }
+
+      .overlay a {
+        display: inline-block;
+        margin-top: 1rem;
+        padding: 0.5rem 1rem;
+        background-color: #ff00aa;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 5px;
+      }
+
+      .overlay a:hover {
+        background-color: #ff14b8;
+      }
 
       /* Hero Section */
       .hero {
@@ -273,8 +428,7 @@
         justify-content: center;
         text-align: center;
         padding: 0 2rem;
-        background: url("Blue\ Surf\ Sport\ Photo\ Collage.png") no-repeat
-          center center/cover;
+        background: url("background hero.avif") no-repeat center center/cover;
         color: #ffffff;
       }
 
@@ -288,33 +442,7 @@
       .hero p {
         font-size: 1.5rem;
         margin-top: 1rem;
-        color: #ffffff;
-        font-weight: bold;
-        text-shadow: 0 0 5px #00f, 0 0 10px #00f, 0 0 20px #00f, 0 0 40px #00f;
-        animation: glow 2s infinite;
-      }
-
-      /* Define the animation */
-      @keyframes glow {
-        0% {
-          text-shadow: 0 0 5px #00f, 0 0 10px #00f, 0 0 20px #00f, 0 0 40px #00f;
-        }
-        50% {
-          text-shadow: 0 0 10px #00f, 0 0 20px #00f, 0 0 30px #00f,
-            0 0 50px #00f;
-        }
-        100% {
-          text-shadow: 0 0 5px #00f, 0 0 10px #00f, 0 0 20px #00f, 0 0 40px #00f;
-        }
-      }
-
-      @keyframes glow {
-        from {
-          text-shadow: 0 0 10px #0026fc, 0 0 20px #0025fa, 0 0 30px #000000;
-        }
-        to {
-          text-shadow: 0 0 20px #000000, 0 0 30px #1100ff, 0 0 40px #0004fa;
-        }
+        color: #ff00c8;
       }
 
       /* Custom Mouse Cursor */
@@ -335,7 +463,7 @@
       .cursor-follow {
         width: 50px;
         height: 50px;
-        border: 2px solid rgba(224, 29, 4, 0.4);
+        border: 2px solid rgba(255, 0, 170, 0.4);
       }
       /* Video Background Section */
       .video-background {
@@ -418,7 +546,7 @@
         text-transform: uppercase;
         letter-spacing: 1px;
         margin-bottom: 0.5rem;
-        text-shadow: 0 0 5px rgb(0, 0, 0), 0 0 10px rgb(17, 0, 255);
+        text-shadow: 0 0 5px rgb(0, 0, 0), 0 0 10px rgb(255, 0, 191);
       }
 
       .project-card .card-text {
@@ -481,13 +609,13 @@
         font-weight: 600;
         text-decoration: none;
         padding: 0.5rem 1.5rem;
-        background-color: #0206ff;
+        background-color: #ff01dd;
         border-radius: 5px;
         transition: background-color 0.3s ease;
       }
 
       .project-link:hover {
-        background-color: #1100ff;
+        background-color: #ff00aa;
       }
 
       @media (max-width: 768px) {
@@ -509,7 +637,7 @@
         position: relative;
         padding: 0 1rem; /* Adds padding to prevent text cutoff on small screens */
         overflow: hidden; /* Ensures no overflow */
-        background-color: #000; /* Fallback background color */
+        background-color: #000000; /* Fallback background color */
       }
 
       /* Additional Video Section */
@@ -520,7 +648,7 @@
         height: 100vh;
         position: relative;
         overflow: hidden;
-        background-color: #000142; /* Fallback background color */
+        background-color: #ff0766; /* Fallback background color */
       }
 
       /* Video Background */
@@ -546,7 +674,8 @@
         font-size: 3rem;
         font-weight: bold;
         color: rgb(255, 255, 255); /* Blue color for title */
-        text-shadow: 0 0 10px #00f, 0 0 20px #00f, 0 0 30px #00f;
+        text-shadow: 0 0 10px rgb(255, 0, 43), 0 0 20px rgb(247, 0, 164),
+          0 0 30px rgb(255, 0, 191);
         margin-bottom: 1rem;
       }
 
@@ -556,105 +685,58 @@
         color: #fff;
         text-shadow: 0 0 5px #fffdfd;
       }
-#loading-screen {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #000;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 9999;
-    flex-direction: column;
-}
-
-.loading-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.loader {
-    border: 6px solid #f3f3f3; /* Light gray background */
-    border-top: 6px solid #3498db; /* Blue color */
-    border-radius: 50%;
-    width: 80px;
-    height: 80px;
-    margin-bottom: 20px;
-    animation: spin 2s linear infinite;
-}
-
-.loading-line {
-    width: 0;
-    height: 4px;
-    background-color: #3498db;
-    animation: load 10s linear forwards;
-}
-
-@keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-}
-
-@keyframes load {
-    0% { width: 0%; }
-    100% { width: 100%; }
-}
-
-      /* Scroll Arrows */
-      .scroll-arrow {
+      #loading-screen {
         position: fixed;
-        width: 40px;
-        height: 40px;
-        border-left: 5px solid blue;
-        border-bottom: 5px solid blue;
-        cursor: pointer;
-        z-index: 1000;
-        transition: transform 0.2s ease, opacity 0.2s ease;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #000;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 9999;
+        flex-direction: column;
       }
 
-      /* Down Arrow */
-      .scroll-down {
-        bottom: 20px; /* Position at the bottom */
-        right: 20px; /* Position on the right edge */
-        transform: rotate(45deg);
-        animation: bounce-down 1.5s infinite;
+      .loading-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
       }
 
-      /* Up Arrow */
-      .scroll-up {
-        top: 20px; /* Position at the top */
-        right: 20px; /* Position on the right edge */
-        transform: rotate(225deg);
-        display: none; /* Hidden initially */
+      .loader {
+        border: 6px solid #f3f3f3; /* Light gray background */
+        border-top: 6px solid #ff008c; /* Blue color */
+        border-radius: 50%;
+        width: 80px;
+        height: 80px;
+        margin-bottom: 20px;
+        animation: spin 2s linear infinite;
       }
 
-      /* Arrow Hover Effect */
-      .scroll-arrow:hover {
-        transform: scale(1.1);
-        opacity: 0.8;
+      .loading-line {
+        width: 0;
+        height: 4px;
+        background-color: #ff008c;
+        animation: load 10s linear forwards;
       }
 
-      /* Bounce Animations */
-      @keyframes bounce-down {
-        0%,
+      @keyframes spin {
+        0% {
+          transform: rotate(0deg);
+        }
         100% {
-          transform: rotate(45deg) translateY(0);
-        }
-        50% {
-          transform: rotate(45deg) translateY(10px);
+          transform: rotate(360deg);
         }
       }
 
-      @keyframes bounce-up {
-        0%,
-        100% {
-          transform: rotate(225deg) translateY(0);
+      @keyframes load {
+        0% {
+          width: 0%;
         }
-        50% {
-          transform: rotate(225deg) translateY(-10px);
+        100% {
+          width: 100%;
         }
       }
 
@@ -684,7 +766,7 @@
 
       .social-links a {
         font-size: 1.5rem;
-        color: rgb(2, 19, 255);
+        color: rgb(255, 3, 158);
         transition: color 0.3s ease;
       }
 
@@ -702,11 +784,11 @@
   </head>
 
   <body>
- <div id="loading-screen">
-        <div class="loading-container">
-            <div class="loader"></div>
-            <div class="loading-line"></div>
-        </div>
+    <div id="loading-screen">
+      <div class="loading-container">
+        <div class="loader"></div>
+        <div class="loading-line"></div>
+      </div>
     </div>
 
     <!-- Custom Cursor -->
@@ -726,20 +808,17 @@
         <a class="nav-link" href="/skills">Skills & Experience</a>
       </nav>
     </header>
-
     <!-- Hero Section -->
     <section class="hero">
-      <h1>Hi, I'm Lethabo Semenya</h1>
-      <p>An Autodidact Graphic Designer and Aspiring Frontend Developer</p>
+      <div class="hero-content">
+        <p class="hello">HELLO.</p>
+        <h1>I'm <span class="highlight">LETHABO SEMENYA.</span></h1>
+        <p class="subtext">
+          GRAPHIC DESIGNER | FRONT-END DEVELOPER | AUTODIDACT DESIGNER
+        </p>
+        <a href="/about-me" class="btn">GET TO KNOW ME &#9662;</a>
+      </div>
     </section>
-    <!-- Scroll Down Arrow -->
-    <div
-      class="scroll-arrow scroll-down"
-      onclick="scrollToSection('projects')"
-    ></div>
-
-    <!-- Scroll Up Arrow -->
-    <div class="scroll-arrow scroll-up" onclick="scrollToTop()"></div>
 
     <section class="video-background">
       <video autoplay loop muted playsinline>
@@ -748,6 +827,36 @@
       </video>
 
       <div class="video-overlay"></div>
+    </section>
+
+    <!-- Website Projects Section -->
+    <section class="website-projects">
+      <h2>Website Projects</h2>
+      <p>Check out the websites I designed for two amazing companies</p>
+
+      <div class="website-gallery">
+        <!-- Website 1 -->
+        <div class="website-item">
+          <img src="innovation co.jpg" alt="Company 1 Website" />
+          <div class="overlay">
+            <h3>Architectural Innovations Co</h3>
+            <p>Lead generation for architects, engineers & contractors</p>
+            <a href="link-to-company1.com" target="_blank">Visit Website</a>
+          </div>
+        </div>
+
+        <!-- Website 2 -->
+        <div class="website-item">
+          <img src="ffi.jpg" alt="Company 2 Website" />
+          <div class="overlay">
+            <h3>Future Front Innovators</h3>
+            <p>A sleek portfolio website for an architecture firm</p>
+            <a href="http://futurefrontinnovators.co.za/" target="_blank"
+              >Visit Website</a
+            >
+          </div>
+        </div>
+      </div>
     </section>
 
     <section class="projects" id="projects">
@@ -771,7 +880,7 @@
         </div>
         <div class="project-info">
           <h2>Close-Up of My Digital Art Gallery</h2>
-          <a href="projects.html" class="project-link">View Details</a>
+          <a href="/projects" class="project-link">View Details</a>
         </div>
       </div>
     </section>
@@ -789,26 +898,26 @@
             >View Demo</a
           >
         </div>
-        <!-- Project 2 -->
         <div class="showcase-card">
-          <img src="recipe app.jpg" alt="Project 2" />
+          <img src="Hangman-Word-Game-Wood.png" alt="Project 3" />
           <a
-            href="https://playful-melba-d07254.netlify.app/"
+            href="https://incredible-semifreddo-006504.netlify.app/"
             class="view-demo-link"
             >View Demo</a
           >
         </div>
+
         <!-- Project 3 -->
         <div class="showcase-card">
           <img src="task m app.jpg" alt="Project 3" />
           <a
-            href="https://luxury-bienenstitch-3d2e42.netlify.app/"
+            href="https://warm-kitten-12c6b5.netlify.app/"
             class="view-demo-link"
             >View Demo</a
           >
         </div>
       </div>
-      <a href="projects.html" class="view-projects-link">Frontent Projects</a>
+      <a href="projects.html" class="view-projects-link">UI/UX Experiments</a>
     </section>
 
     <!-- Video Background Section -->
@@ -902,23 +1011,13 @@
         window.scrollTo({ top: 0, behavior: "smooth" });
       }
 
-      // Show/Hide the Scroll-Up Arrow
-      window.addEventListener("scroll", () => {
-        const scrollUpArrow = document.querySelector(".scroll-up");
-        if (window.scrollY > 200) {
-          scrollUpArrow.style.display = "block";
-        } else {
-          scrollUpArrow.style.display = "none";
-        }
+      window.addEventListener("load", () => {
+        setTimeout(() => {
+          // Hide the loading screen and show the content after 10 seconds
+          document.getElementById("loading-screen").style.display = "none";
+          document.getElementById("content").style.display = "block";
+        }, 10000); // 10 seconds
       });
-
-window.addEventListener('load', () => {
-    setTimeout(() => {
-        // Hide the loading screen and show the content after 10 seconds
-        document.getElementById('loading-screen').style.display = 'none';
-        document.getElementById('content').style.display = 'block';
-    }, 10000); // 10 seconds
-});
     </script>
   </body>
 </html>
