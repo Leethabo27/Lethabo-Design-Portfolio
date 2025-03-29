@@ -35,7 +35,7 @@
       header {
         text-align: center;
         padding: 20px;
-        background: linear-gradient(45deg, #0400ff, #000000);
+        background: linear-gradient(45deg, #ff008c, #000000);
         box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
         color: #fff;
       }
@@ -50,12 +50,12 @@
       @keyframes glowingText {
         0%,
         100% {
-          text-shadow: 0 0 10px #00bfff, 0 0 20px #00d4ff, 0 0 30px #0400ff,
-            0 0 40px #00bfff;
+          text-shadow: 0 0 10px #ff00aa, 0 0 20px #ff0095, 0 0 30px #ff0080,
+            0 0 40px #ff009d;
         }
         50% {
-          text-shadow: 0 0 20px #0400ff, 0 0 30px #00bfff, 0 0 40px #00d4ff,
-            0 0 50px #0400ff;
+          text-shadow: 0 0 20px #ff0095, 0 0 30px #ff008c, 0 0 40px #ff009d,
+            0 0 50px #ff00b3;
         }
       }
 
@@ -91,18 +91,18 @@
         border-radius: 50%;
         animation: pulse 2s infinite;
         border: 6px solid rgba(255, 255, 255, 0.8);
-        box-shadow: 0 0 30px rgba(0, 255, 255, 0.5);
+        box-shadow: 0 0 30px rgba(255, 0, 119, 0.5);
       }
 
       @keyframes pulse {
         0%,
         100% {
           transform: scale(1);
-          box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+          box-shadow: 0 0 20px rgba(255, 0, 140, 0.5);
         }
         50% {
           transform: scale(1.1);
-          box-shadow: 0 0 40px rgba(0, 255, 255, 0.8);
+          box-shadow: 0 0 40px rgba(255, 0, 149, 0.8);
         }
       }
 
@@ -122,11 +122,11 @@
 
       .stat {
         background: rgba(0, 0, 0, 0.8);
-        border: 2px solid #00bfff;
+        border: 2px solid #ff008c;
         border-radius: 10px;
         padding: 20px;
         text-align: center;
-        box-shadow: 0 0 15px rgba(0, 191, 255, 0.6);
+        box-shadow: 0 0 15px rgba(255, 0, 98, 0.6);
         animation: bounceIn 1.5s ease-in-out infinite alternate;
       }
 
@@ -142,7 +142,7 @@
 
       .stat h3 {
         font-size: 2rem;
-        color: #00d4ff;
+        color: #ff0080;
       }
 
       .stat p {
@@ -153,7 +153,7 @@
       .education-skills-section {
         text-align: center;
         padding: 50px 20px;
-        background: linear-gradient(135deg, #000000, #03123b);
+        background: linear-gradient(135deg, #000000, #ff0077);
         color: #ffffff;
         border-radius: 20px;
         box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
@@ -172,10 +172,10 @@
 
       @keyframes glow-text {
         from {
-          text-shadow: 0 0 10px #00ccff, 0 0 20px #00ccff, 0 0 30px #00ccff;
+          text-shadow: 0 0 10px #ff008c, 0 0 20px #ff008c, 0 0 30px #ff009d;
         }
         to {
-          text-shadow: 0 0 20px #007bff, 0 0 40px #007bff, 0 0 60px #007bff;
+          text-shadow: 0 0 20px #ff0080, 0 0 40px #ff0080, 0 0 60px #ff00bf;
         }
       }
 
@@ -194,19 +194,19 @@
         padding: 20px;
         background: rgba(0, 0, 0, 0.1);
         border-radius: 15px;
-        box-shadow: 0 10px 20px rgba(0, 17, 250, 0.3);
+        box-shadow: 0 10px 20px rgba(250, 0, 125, 0.3);
         transition: transform 0.3s ease, box-shadow 0.3s ease;
       }
 
       .skill-item:hover {
         transform: translateY(-10px);
-        box-shadow: 0 15px 30px rgba(0, 204, 255, 0.6);
+        box-shadow: 0 15px 30px rgba(255, 0, 85, 0.6);
       }
 
       .skill-icon {
         font-size: 3rem;
         margin-bottom: 10px;
-        color: #00ccff;
+        color: #ff008c;
         animation: float-icon 3s ease-in-out infinite;
       }
 
@@ -249,10 +249,10 @@
 
       @keyframes glow-text {
         from {
-          text-shadow: 0 0 10px #001aff, 0 0 20px #3700ff, 0 0 30px #1e12bd;
+          text-shadow: 0 0 10px #ff0095, 0 0 20px #ff0037, 0 0 30px #bd1262;
         }
         to {
-          text-shadow: 0 0 20px #0004ff, 0 0 40px #0004ff, 0 0 60px #0400ff;
+          text-shadow: 0 0 20px #ff009d, 0 0 40px #ff00b3, 0 0 60px #ff00bf;
         }
       }
 
@@ -320,42 +320,41 @@
       .quote {
         margin: 50px auto;
         padding: 20px;
-        border-left: 5px solid #00bfff;
+        border-left: 5px solid #ff00b3;
         background: rgba(0, 0, 0, 0.7);
         font-style: italic;
         font-size: 1.5rem;
         line-height: 1.6;
         color: #fff;
-        box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+        box-shadow: 0 0 20px rgba(255, 0, 140, 0.5);
       }
 
       .cta-button {
         display: inline-block;
         padding: 15px 30px;
-        background: linear-gradient(90deg, #0066ff, #00ccff);
+        background: linear-gradient(90deg, #ff00dd, #ff00aa);
         color: #fff;
         font-size: 1.2rem;
         font-weight: bold;
         text-transform: uppercase;
         text-decoration: none;
         border-radius: 50px;
-        box-shadow: 0 0 15px rgba(0, 204, 255, 0.7),
-          0 0 30px rgba(0, 204, 255, 0.5);
+        box-shadow: 0 0 15px rgba(255, 0, 140, 0.7),
+          0 0 30px rgba(255, 0, 149, 0.5);
         transition: transform 0.3s ease, box-shadow 0.3s ease,
           background 0.3s ease;
       }
 
       .cta-button:hover {
         transform: scale(1.1);
-        background: linear-gradient(90deg, #00ccff, #0066ff);
-        box-shadow: 0 0 20px rgba(0, 204, 255, 1),
-          0 0 40px rgba(0, 204, 255, 0.8);
+        background: linear-gradient(90deg, #ff00aa, #ff0281);
+        box-shadow: 0 0 20px rgb(255, 0, 200), 0 0 40px rgba(255, 0, 157, 0.8);
       }
 
       .cta-button:active {
         transform: scale(0.95);
-        box-shadow: 0 0 10px rgba(0, 204, 255, 0.8),
-          0 0 20px rgba(0, 204, 255, 0.6);
+        box-shadow: 0 0 10px rgba(255, 0, 157, 0.8),
+          0 0 20px rgba(255, 0, 157, 0.6);
       }
       /* Why Work With Me Section */
       .why-work-with-me {
@@ -379,10 +378,10 @@
 
       @keyframes shine-text {
         0% {
-          text-shadow: 0 0 10px #0400ff, 0 0 20px #4400ff, 0 0 30px #1900ff;
+          text-shadow: 0 0 10px #ff00b3, 0 0 20px #ff0095, 0 0 30px #ff00bf;
         }
         100% {
-          text-shadow: 0 0 40px #3700ff, 0 0 80px #002fff, 0 0 100px #040108;
+          text-shadow: 0 0 40px #ff009d, 0 0 80px #ff0080, 0 0 100px #040108;
         }
       }
 
@@ -410,7 +409,7 @@
       /* Download Button Style */
       .download-button {
         display: inline-block;
-        background: #2600ff;
+        background: #ff00b3;
         color: #fff;
         text-decoration: none;
         padding: 15px 30px;
@@ -422,12 +421,12 @@
       }
 
       .download-button:hover {
-        background: #0400fa;
+        background: #fa0068;
         transform: translateY(-2px);
       }
 
       .download-button:active {
-        background: #008ae6;
+        background: #e60060;
       }
 
       /* Glowing Border Effect */
@@ -438,7 +437,7 @@
         left: 0;
         right: 0;
         bottom: 0;
-        border: 5px solid #000283;
+        border: 5px solid #ff097c;
         border-radius: 20px;
         z-index: -1;
         animation: glowing-border 2s infinite alternate;
@@ -446,7 +445,7 @@
 
       @keyframes glowing-border {
         0% {
-          border-color: #1900ff;
+          border-color: #ff00b3;
         }
         100% {
           border-color: #000000;
@@ -460,31 +459,31 @@
         cursor: pointer;
       }
 
-      
-.interactive-text p {
-    font-size: 1.2rem;
-    background: linear-gradient(to right, #f8f8fa, #0400ff);
-    background-clip: text; /* Standard property */
-    -webkit-background-clip: text; /* WebKit-specific */
-    -webkit-text-fill-color: transparent;
-    color: transparent; /* Fallback for unsupported browsers */
-    animation: textGlow 3s infinite;
-}
+      .interactive-text p {
+        font-size: 1.2rem;
+        background: linear-gradient(to right, #f8f8fa, #ff00c8);
+        background-clip: text; /* Standard property */
+        -webkit-background-clip: text; /* WebKit-specific */
+        -webkit-text-fill-color: transparent;
+        color: transparent; /* Fallback for unsupported browsers */
+        animation: textGlow 3s infinite;
+      }
 
-@keyframes textGlow {
-    0%, 100% {
-        text-shadow: 0 0 10px #0400ff, 0 0 20px #0400ff;
-    }
-    50% {
-        text-shadow: 0 0 5px #0400ff, 0 0 10px #0400ff;
-    }
-}
+      @keyframes textGlow {
+        0%,
+        100% {
+          text-shadow: 0 0 10px #ff0080, 0 0 20px #ff00b3;
+        }
+        50% {
+          text-shadow: 0 0 5px #ff0095, 0 0 10px #ff00aa;
+        }
+      }
 
       footer {
         padding: 20px;
         background: #000;
         color: #fff;
-        text-shadow: 0 0 10px #00bfff;
+        text-shadow: 0 0 10px #ff0077;
       }
     </style>
   </head>
