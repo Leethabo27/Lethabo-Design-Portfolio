@@ -21,6 +21,10 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
     />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Playfair+Display&display=swap"
+      rel="stylesheet"
+    />
     <style>
       /* General Styles */
       body {
@@ -35,7 +39,7 @@
       header {
         text-align: center;
         padding: 20px;
-        background: linear-gradient(45deg, #ff008c, #000000);
+        background: linear-gradient(45deg, #ff008c, #ff0040);
         box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
         color: #fff;
       }
@@ -127,6 +131,7 @@
         padding: 20px;
         text-align: center;
         box-shadow: 0 0 15px rgba(255, 0, 98, 0.6);
+        opacity: 0; /* Initially invisible */
         animation: bounceIn 1.5s ease-in-out infinite alternate;
       }
 
@@ -149,249 +154,229 @@
         margin-top: 10px;
         font-size: 1rem;
       }
-      /* Education & Skills Section */
+
+      .stat.visible {
+        opacity: 1; /* Make stat visible when in view */
+        transition: opacity 1s ease-out;
+      }
+
+      .counter {
+        font-size: 2.5rem;
+        font-weight: bold;
+      }
+
       .education-skills-section {
+        font-family: "Inter", sans-serif;
         text-align: center;
         padding: 50px 20px;
-        background: linear-gradient(135deg, #000000, #ff0077);
-        color: #ffffff;
-        border-radius: 20px;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        background: rgba(0, 0, 0, 0.6); /* translucent over video */
+        border-radius: 16px;
         margin: 40px auto;
-        max-width: 800px;
+        max-width: 850px;
+        backdrop-filter: blur(10px);
+        color: #f3f3f3;
       }
 
       .education-skills-section h2 {
-        font-family: "Playfair Display", serif;
-        font-size: 2.5rem;
-        color: #ffffff;
+        font-size: 2rem;
+        color: #ff0055;
         margin-bottom: 30px;
-        position: relative;
-        animation: glow-text 2s ease-in-out infinite alternate;
-      }
-
-      @keyframes glow-text {
-        from {
-          text-shadow: 0 0 10px #ff008c, 0 0 20px #ff008c, 0 0 30px #ff009d;
-        }
-        to {
-          text-shadow: 0 0 20px #ff0080, 0 0 40px #ff0080, 0 0 60px #ff00bf;
-        }
+        border-bottom: 2px solid #ff0180;
+        display: inline-block;
+        padding-bottom: 5px;
       }
 
       .skills-container {
         display: flex;
-        justify-content: center;
         flex-wrap: wrap;
+        justify-content: center;
         gap: 20px;
+        margin-top: 20px;
       }
 
       .skill-item {
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid #ff024e;
+        border-radius: 12px;
+        padding: 15px 25px;
+        min-width: 240px;
+        text-align: left;
         display: flex;
-        flex-direction: column;
         align-items: center;
-        text-align: center;
-        padding: 20px;
-        background: rgba(0, 0, 0, 0.1);
-        border-radius: 15px;
-        box-shadow: 0 10px 20px rgba(250, 0, 125, 0.3);
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        gap: 12px;
+        transition: transform 0.3s ease;
+        box-shadow: 0 0 10px rgba(255, 105, 180, 0.2);
       }
 
       .skill-item:hover {
-        transform: translateY(-10px);
-        box-shadow: 0 15px 30px rgba(255, 0, 85, 0.6);
+        transform: translateY(-5px);
+        box-shadow: 0 0 15px rgba(255, 105, 180, 0.4);
       }
 
       .skill-icon {
-        font-size: 3rem;
-        margin-bottom: 10px;
-        color: #ff008c;
-        animation: float-icon 3s ease-in-out infinite;
+        font-size: 1.5rem;
+        color: #ff0239;
       }
 
-      @keyframes float-icon {
-        0% {
+      .skill-item span {
+        font-size: 0.85rem;
+        color: #ccc;
+      }
+
+      .passions-section {
+        font-family: "Inter", sans-serif;
+        text-align: center;
+        padding: 60px 20px;
+        background: rgba(0, 0, 0, 0.6); /* Overlays well on video */
+        border-radius: 16px;
+        max-width: 850px;
+        margin: 40px auto;
+        backdrop-filter: blur(10px);
+        color: #f5f5f5;
+      }
+
+      .passions-section h2 {
+        font-size: 2rem;
+        color: #ff0055;
+        margin-bottom: 30px;
+        border-bottom: 2px solid #ff0066;
+        display: inline-block;
+        padding-bottom: 5px;
+      }
+
+      .passions-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 25px;
+        margin-top: 20px;
+      }
+
+      .passion-item {
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid #ff0066;
+        border-radius: 12px;
+        padding: 20px;
+        width: 230px;
+        box-shadow: 0 0 10px rgba(255, 105, 180, 0.15);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .passion-item:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 12px 25px rgba(255, 105, 180, 0.35);
+      }
+
+      .passion-icon {
+        font-size: 2.8rem;
+        margin-bottom: 10px;
+        color: #ff012b;
+        animation: bounce-icon 2s ease-in-out infinite;
+      }
+
+      @keyframes bounce-icon {
+        0%,
+        100% {
           transform: translateY(0);
         }
         50% {
           transform: translateY(-10px);
         }
-        100% {
-          transform: translateY(0);
-        }
-      }
-
-      .skill-item p {
-        font-size: 1.2rem;
-        color: #e0f7fa;
-      }
-      /* Passions Section */
-      .passions-section {
-        text-align: center;
-        padding: 60px 20px;
-        background: linear-gradient(135deg, #ff038e, #000000);
-        color: #fff;
-        border-radius: 20px;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-        margin: 40px auto;
-        max-width: 800px;
-      }
-
-      .passions-section h2 {
-        font-family: "Playfair Display", serif;
-        font-size: 2.5rem;
-        color: #ffffff;
-        margin-bottom: 30px;
-        position: relative;
-        animation: glow-text 2s ease-in-out infinite alternate;
-      }
-
-      @keyframes glow-text {
-        from {
-          text-shadow: 0 0 10px #ff0095, 0 0 20px #ff0037, 0 0 30px #bd1262;
-        }
-        to {
-          text-shadow: 0 0 20px #ff009d, 0 0 40px #ff00b3, 0 0 60px #ff00bf;
-        }
-      }
-
-      .passions-container {
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
-        gap: 30px;
-      }
-
-      .passion-item {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        padding: 20px;
-        background: rgba(0, 0, 0, 0.1);
-        border-radius: 15px;
-        box-shadow: 0 10px 20px rgba(28, 13, 160, 0.3);
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-      }
-
-      .passion-item:hover {
-        transform: translateY(-10px);
-        box-shadow: 0 15px 30px rgba(250, 2, 147, 0.6);
-      }
-
-      .passion-icon {
-        font-size: 3.5rem;
-        margin-bottom: 10px;
-        color: #ffffff;
-        animation: bounce-icon 2s ease-in-out infinite;
-      }
-
-      @keyframes bounce-icon {
-        0% {
-          transform: translateY(0);
-        }
-        50% {
-          transform: translateY(-15px);
-        }
-        100% {
-          transform: translateY(0);
-        }
       }
 
       .passion-item p {
-        font-size: 1.2rem;
+        font-size: 1rem;
         color: #f1f1f1;
-        margin-top: 10px;
+        margin-top: 5px;
       }
 
       .passions-description {
         margin-top: 40px;
-        font-size: 1.2rem;
-        line-height: 1.6;
-        color: #e1e1e1;
-        max-width: 800px;
-        margin: 0 auto;
+        font-size: 1.1rem;
+        color: #d8d8d8;
+        max-width: 700px;
+        margin: 40px auto 0;
         font-style: italic;
-        letter-spacing: 0.5px;
-      }
-
-      /* Motivational Quote */
-      .quote {
-        margin: 50px auto;
-        padding: 20px;
-        border-left: 5px solid #ff00b3;
-        background: rgba(0, 0, 0, 0.7);
-        font-style: italic;
-        font-size: 1.5rem;
         line-height: 1.6;
-        color: #fff;
-        box-shadow: 0 0 20px rgba(255, 0, 140, 0.5);
       }
-
-      .cta-button {
-        display: inline-block;
-        padding: 15px 30px;
-        background: linear-gradient(90deg, #ff00dd, #ff00aa);
-        color: #fff;
-        font-size: 1.2rem;
-        font-weight: bold;
-        text-transform: uppercase;
-        text-decoration: none;
-        border-radius: 50px;
-        box-shadow: 0 0 15px rgba(255, 0, 140, 0.7),
-          0 0 30px rgba(255, 0, 149, 0.5);
-        transition: transform 0.3s ease, box-shadow 0.3s ease,
-          background 0.3s ease;
-      }
-
-      .cta-button:hover {
-        transform: scale(1.1);
-        background: linear-gradient(90deg, #ff00aa, #ff0281);
-        box-shadow: 0 0 20px rgb(255, 0, 200), 0 0 40px rgba(255, 0, 157, 0.8);
-      }
-
-      .cta-button:active {
-        transform: scale(0.95);
-        box-shadow: 0 0 10px rgba(255, 0, 157, 0.8),
-          0 0 20px rgba(255, 0, 157, 0.6);
-      }
-      /* Why Work With Me Section */
-      .why-work-with-me {
-        background: linear-gradient(145deg, #000000, #2b0019);
-        color: #fff;
+      /* Motivational Quote Section */
+      .quote-section {
+        padding: 50px 20px;
         text-align: center;
-        padding: 60px 20px;
-        border-radius: 20px;
-        box-shadow: 0 10px 50px rgba(0, 0, 0, 0.5);
+        border-radius: 16px;
         position: relative;
         z-index: 2;
+        background: rgba(0, 0, 0, 0.6);
+        backdrop-filter: blur(6px);
+        max-width: 900px;
+        margin: 60px auto;
+        animation: fadeInUp 1.2s ease-in-out;
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+      }
+
+      .quote {
+        font-family: sans-serif;
+        font-size: 1.2rem;
+        line-height: 1.6;
+        font-weight: 400;
+        color: #9c9c9c;
+        max-width: 750px;
+        margin: 0 auto;
+      }
+
+      .quote .author {
+        display: block;
+        margin-top: 15px;
+        font-size: 1rem;
+        font-style: normal;
+        font-family: "Playfair Display", serif;
+        color: #ff0055;
+      }
+
+      /* Fade-in Animation */
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(40px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      .why-work-with-me {
+        font-family: "Inter", sans-serif;
+        text-align: center;
+        padding: 60px 20px;
+        background: rgba(0, 0, 0, 0.6); /* translucent overlay */
+        border-radius: 16px;
+        max-width: 850px;
+        margin: 40px auto;
+        backdrop-filter: blur(10px);
+        color: #f5f5f5;
+        transition: transform 0.3s ease;
+      }
+
+      .why-work-with-me:hover {
+        transform: translateY(-5px);
       }
 
       .why-work-with-me h2 {
-        font-family: "Playfair Display", serif;
-        font-size: 3rem;
-        color: #ffffff;
+        font-size: 2rem;
+        color: #ff044f;
         margin-bottom: 20px;
-        animation: shine-text 2s ease-in-out infinite alternate;
-      }
-
-      @keyframes shine-text {
-        0% {
-          text-shadow: 0 0 10px #ff00b3, 0 0 20px #ff0095, 0 0 30px #ff00bf;
-        }
-        100% {
-          text-shadow: 0 0 40px #ff009d, 0 0 80px #ff0080, 0 0 100px #040108;
-        }
+        border-bottom: 2px solid #ff0022;
+        display: inline-block;
+        padding-bottom: 6px;
+        animation: glow-title 2s ease-in-out infinite alternate;
       }
 
       .why-work-with-me p {
-        font-size: 1.2rem;
-        line-height: 1.8;
-        max-width: 800px;
+        font-size: 1.1rem;
+        line-height: 1.7;
+        max-width: 700px;
         margin: 0 auto;
-        color: #e1e1e1;
-        letter-spacing: 0.5px;
+        color: #e0e0e0;
         font-style: italic;
         animation: fadeInUp 1.5s ease-in-out;
       }
@@ -399,17 +384,18 @@
       @keyframes fadeInUp {
         from {
           opacity: 0;
-          transform: translateY(50px);
+          transform: translateY(40px);
         }
         to {
           opacity: 1;
           transform: translateY(0);
         }
       }
+
       /* Download Button Style */
       .download-button {
         display: inline-block;
-        background: #ff00b3;
+        background: #ff0055;
         color: #fff;
         text-decoration: none;
         padding: 15px 30px;
@@ -429,61 +415,18 @@
         background: #e60060;
       }
 
-      /* Glowing Border Effect */
-      .why-work-with-me::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        border: 5px solid #ff097c;
-        border-radius: 20px;
-        z-index: -1;
-        animation: glowing-border 2s infinite alternate;
-      }
-
-      @keyframes glowing-border {
-        0% {
-          border-color: #ff00b3;
-        }
-        100% {
-          border-color: #000000;
-        }
-      }
-
-      /* Hover Effect for Background */
-      .why-work-with-me:hover {
-        background: linear-gradient(145deg, #000000, #680034);
-        box-shadow: 0 20px 100px rgba(0, 0, 0, 0.7);
-        cursor: pointer;
-      }
-
-      .interactive-text p {
-        font-size: 1.2rem;
-        background: linear-gradient(to right, #f8f8fa, #ff00c8);
-        background-clip: text; /* Standard property */
-        -webkit-background-clip: text; /* WebKit-specific */
-        -webkit-text-fill-color: transparent;
-        color: transparent; /* Fallback for unsupported browsers */
-        animation: textGlow 3s infinite;
-      }
-
-      @keyframes textGlow {
-        0%,
-        100% {
-          text-shadow: 0 0 10px #ff0080, 0 0 20px #ff00b3;
-        }
-        50% {
-          text-shadow: 0 0 5px #ff0095, 0 0 10px #ff00aa;
-        }
+      .interactive-text {
+        text-align: center;
+        margin: 40px auto;
+        padding: 20px;
       }
 
       footer {
+        text-align: center;
         padding: 20px;
-        background: #000;
-        color: #fff;
-        text-shadow: 0 0 10px #ff0077;
+        background-color: #000000;
+        color: #ffffff;
+        font-size: 0.9rem;
       }
     </style>
   </head>
@@ -507,7 +450,7 @@
 
       <section class="download-section">
         <a
-          href="Lethabo Semenya Cv.pdf"
+          href="LETHABO SEMENYA.pdf"
           download="Lethabo_Semenya_CV"
           class="download-button"
         >
@@ -518,15 +461,15 @@
       <!-- Stat Grid -->
       <section class="stats">
         <div class="stat">
-          <h3>2+</h3>
+          <h3 class="counter" data-target="3">0</h3>
           <p>Years of Experience</p>
         </div>
         <div class="stat">
-          <h3>50+</h3>
+          <h3 class="counter" data-target="50">0+</h3>
           <p>Projects Delivered</p>
         </div>
         <div class="stat">
-          <h3>100%</h3>
+          <h3 class="counter" data-target="100">%</h3>
           <p>Client Satisfaction</p>
         </div>
       </section>
@@ -536,15 +479,15 @@
         <div class="skills-container">
           <div class="skill-item">
             <i class="fas fa-graduation-cap skill-icon"></i>
-            <p>Graphic Design Diploma (2023)</p>
+            <p>Graphic Design Diploma <span>(2023)</span></p>
           </div>
           <div class="skill-item">
             <i class="fas fa-code skill-icon"></i>
-            <p>Certified Front-End Developer</p>
+            <p>Emerging Web Developer</p>
           </div>
           <div class="skill-item">
             <i class="fas fa-paint-brush skill-icon"></i>
-            <p>Adobe Creative Suite & Blender Pro</p>
+            <p>Adobe Creative Suite & Blender</p>
           </div>
         </div>
       </section>
@@ -566,38 +509,73 @@
           </div>
         </div>
         <p class="passions-description">
-          Creativity fuels my soul! Whether it’s designing digital masterpieces,
-          diving into immersive gaming worlds, or enjoying the art and
-          storytelling in anime and manga, I’m always exploring new ways to
-          express my passions.
+          Creativity fuels my soul — whether I’m crafting digital art, exploring
+          immersive game worlds, or enjoying the story-rich art of anime and
+          manga.
         </p>
       </section>
-      <section class="why-work-with-me">
-        <h2>Why Work With Me?</h2>
-        <p>
-          I craft impactful designs that engage and elevate brands. Combining
-          creativity with technical expertise, I’m dedicated to delivering
-          solutions that stand out. Let’s bring your vision to life together!
-        </p>
+
+      <section class="why-work-with-me reveal">
+        <div class="section-glass">
+          <h2>Why Work With Me?</h2>
+          <p>
+            I craft impactful designs that engage and elevate brands. Combining
+            creativity with technical expertise, I’m dedicated to delivering
+            solutions that stand out. Let’s bring your vision to life together!
+          </p>
+        </div>
       </section>
 
       <!-- Motivational Quote -->
-      <div class="quote">
-        “Design is not just what it looks like and feels like. Design is how it
-        works.” – Steve Jobs
-      </div>
+      <section class="quote-section">
+        <blockquote class="quote">
+          “Design is not just what it looks like and feels like. Design is how
+          it works.”
+          <span class="author">– Steve Jobs</span>
+        </blockquote>
+      </section>
+      <footer>&copy; 2024 Lethabo Semenya. All rights reserved.</footer>
 
-      <!-- Interactive Text -->
-      <div class="interactive-text">
-        <p>Let’s bring your vision to life with creativity and precision.</p>
-      </div>
+      <script>
+        // Utility: Check if an element is in the viewport
+        function isInView(element, offset = 150) {
+          const rect = element.getBoundingClientRect();
+          return rect.top < window.innerHeight - offset;
+        }
 
-      <!-- CTA Button -->
-      <div>
-        <a href="contact.html" class="cta-button">Hire Me Today</a>
-      </div>
+        // Animate number counters
+        function animateCounter(stat) {
+          const counter = stat.querySelector(".counter");
+          const target = +counter.getAttribute("data-target");
+          let count = 0;
+
+          if (!stat.classList.contains("animated")) {
+            stat.classList.add("animated"); // Prevent re-animating
+
+            const interval = setInterval(() => {
+              count++;
+              counter.innerText = count;
+              if (count >= target) clearInterval(interval);
+            }, 20);
+          }
+        }
+
+        // Scroll event to handle all animations
+        window.addEventListener("scroll", () => {
+          // Reveal animation
+          document.querySelectorAll(".reveal").forEach((el) => {
+            if (isInView(el)) el.classList.add("active");
+          });
+
+          // Stat counter animation
+          document.querySelectorAll(".stat").forEach((stat) => {
+            if (isInView(stat)) {
+              stat.classList.add("visible");
+              animateCounter(stat);
+            }
+          });
+        });
+      </script>
     </div>
-
-    <footer>&copy; 2024 Lethabo Semenya. All rights reserved.</footer>
   </body>
 </html>
