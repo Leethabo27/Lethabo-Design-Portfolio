@@ -659,6 +659,134 @@
           width: 100%;
         }
       }
+    /* Book Design Section */
+.book-design-section {
+  padding: 60px 20px;
+  background: #0a0a0a;
+  color: #fff;
+  text-align: center;
+}
+
+.book-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto 40px;
+  gap: 40px;
+}
+
+/* Left Info */
+.book-info-left {
+  flex: 1 1 450px;
+  text-align: left;
+}
+
+.book-info-left h2 {
+  font-size: 2.8rem;
+  color: #ff16b1;
+  margin-bottom: 15px;
+}
+
+.book-info-left .book-description {
+  font-size: 1.1rem;
+  color: #ccc;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.book-tools {
+  margin-bottom: 15px;
+}
+
+.book-tool-icon {
+  font-size: 2rem;
+  margin-right: 10px;
+  color: #ff16b1;
+}
+
+.book-excitement {
+  font-style: italic;
+  color: #fff;
+  font-size: 1rem;
+}
+
+/* Right Main Animated Image */
+.book-main-image {
+  flex: 1 1 400px;
+  perspective: 1000px;
+}
+
+.book-main-image img {
+  width: 100%;
+  border-radius: 15px;
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+  box-shadow: 0 8px 25px rgba(255, 0, 150, 0.3);
+}
+
+.book-main-image img:hover {
+  transform: rotateY(15deg) scale(1.05);
+}
+
+/* Additional Mockups Gallery */
+.book-mockups-gallery {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.book-mockups-gallery img {
+  width: 200px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.book-mockups-gallery img:hover {
+  transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .book-content {
+    flex-direction: column-reverse;
+    text-align: center;
+  }
+
+  .book-info-left {
+    text-align: center;
+  }
+
+  .book-main-image {
+    margin-bottom: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .book-info-left h2 {
+    font-size: 2rem;
+  }
+
+  .book-info-left .book-description,
+  .book-excitement {
+    font-size: 1rem;
+  }
+
+  .book-mockups-gallery img {
+    width: 45%;
+  }
+}
+
+@media (max-width: 480px) {
+  .book-mockups-gallery img {
+    width: 90%;
+  }
+}
+
+
       /* Welcome Video Section */
       .welcome-video-section {
         display: flex;
@@ -969,6 +1097,41 @@
       </div>
     </section>
 
+    <!-- Book Cover Design Section -->
+<section class="book-design-section">
+  <div class="book-content">
+    <!-- Left Info -->
+    <div class="book-info-left">
+      <h2>Upcoming Book Cover Design</h2>
+      <p class="book-description">
+        I had the honor of designing the upcoming memoir <strong>"Through it All"</strong> by Tsakane Mamabolo. 
+        This design combines creativity, storytelling, and modern aesthetics to captivate readers.
+      </p>
+      <div class="book-tools">
+        <p>Tools Used:</p>
+        <i class="fab fa-adobe book-tool-icon" title="Photoshop"></i>
+        <i class="fas fa-cube book-tool-icon" title="Blender"></i>
+      </div>
+      <p class="book-excitement">
+        Exciting project that pushed my design skills to the next level!
+      </p>
+    </div>
+
+    <!-- Right Main Animated Image -->
+    <div class="book-main-image">
+      <img src="bc aus maki.png" alt="Book Main Mockup" />
+    </div>
+  </div>
+
+  <!-- Additional Mockups -->
+  <div class="book-mockups-gallery">
+    <img src="ttttt.png" alt="Book Mockup 2" />
+    <img src="book cvr.png" alt="Book Mockup 3" />
+    <img src="Hardcover Books Mockup Mosaic (1).png" alt="Book Mockup 4" />
+  </div>
+</section>
+
+
     <!-- Web/App Development Showcase Section -->
     <section class="web-app-showcase">
       <h7>Check Out My Web/App Development</h7>
@@ -1105,6 +1268,7 @@
     </script>
   </body>
 </html>
+
 
 
 
