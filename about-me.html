@@ -222,6 +222,69 @@
         font-size: 0.85rem;
         color: #ccc;
       }
+      /* Floating profile image with 3D animation */
+.profile-section img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  border: 6px solid rgba(255, 255, 255, 0.8);
+  box-shadow: 0 0 30px rgba(255, 0, 119, 0.5);
+  animation: floaty 4s ease-in-out infinite;
+}
+
+@keyframes floaty {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-15px) rotate(2deg); }
+}
+
+/* 3D Hover Effects */
+.skill-item, .passion-item {
+  perspective: 1000px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skill-item:hover, .passion-item:hover {
+  transform: rotate3d(1, 1, 0, 10deg) scale(1.05);
+  box-shadow: 0 20px 40px rgba(255, 105, 180, 0.5);
+}
+
+/* Smooth fade/slide-in reveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease-out;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .stats {
+    grid-template-columns: 1fr 1fr;
+  }
+  .passions-container, .skills-container {
+    gap: 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  header h1 { font-size: 2.2rem; }
+  .stats { grid-template-columns: 1fr; }
+  .skill-item, .passion-item { min-width: 100%; }
+  .profile-section img { width: 150px; height: 150px; }
+}
+
+@media (max-width: 480px) {
+  .download-button {
+    font-size: 1rem;
+    padding: 12px 20px;
+  }
+  .quote { font-size: 1rem; }
+}
+
 
       .passions-section {
         font-family: "Inter", sans-serif;
@@ -579,3 +642,4 @@
     </div>
   </body>
 </html>
+
