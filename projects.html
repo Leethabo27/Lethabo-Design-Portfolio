@@ -502,6 +502,151 @@
         font-size: 0.9rem;
         color: #aaa;
       }
+.frontend-section {
+  background-color: #0e0e0e;
+  color: #fff;
+  padding: 60px 20px;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  color: #ff69b4; /* pink accent */
+  margin-bottom: 40px;
+  text-shadow: 0 0 10px #ff69b4;
+}
+
+.apps-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  justify-items: center;
+}
+
+.app-card {
+  background-color: #1a1a1a;
+  border-radius: 15px;
+  overflow: hidden;
+  width: 100%;
+  max-width: 300px;
+  box-shadow: 0 0 20px #ff69b4;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.app-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 30px #ff0080;
+}
+
+.app-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.app-card h3 {
+  margin: 15px 0 10px;
+  color: #ff0080;
+}
+
+.demo-btn {
+  display: inline-block;
+  margin-bottom: 20px;
+  padding: 8px 20px;
+  background-color: #ff0281;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: background 0.3s, box-shadow 0.3s;
+}
+
+.demo-btn:hover {
+  background-color: #ff0381;
+  box-shadow: 0 0 10px #ff0037;
+}
+
+/* ===== Miles Morales Portfolio Section ===== */
+.miles-morales-section {
+  padding: 2rem 1rem;
+  background: #000000;
+  color: #ffffff;
+}
+.miles-morales-header h2 {
+  font-size: 2rem;
+  margin-bottom: .5rem;
+}
+.miles-morales-header p {
+  color: #b10076;
+  font-size: 1rem;
+  max-width: 650px;
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+}
+
+/* Grid Layout */
+.miles-morales-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+/* Each portfolio item */
+.miles-morales-item {
+  background: #000000;
+  border-radius: .8rem;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(199, 1, 133, 0.1);
+  transition: transform .2s ease, box-shadow .3s ease;
+}
+.miles-morales-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 25px rgba(255, 2, 99, 0.15);
+}
+
+.miles-morales-item video,
+.miles-morales-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+/* Item Info */
+.miles-morales-info {
+  padding: 1rem;
+}
+.miles-morales-info h3 {
+  margin: 0 0 .5rem;
+  font-size: 1.2rem;
+}
+.miles-morales-info p {
+  font-size: .95rem;
+  color: #ffffff;
+  line-height: 1.5;
+}
+
+/* Tools */
+.miles-morales-tools {
+  margin-top: .5rem;
+}
+.miles-morales-tool {
+  display: inline-block;
+  background: #e50914;
+  color: #ffffff;
+  font-size: .8rem;
+  padding: .25rem .5rem;
+  border-radius: .4rem;
+  margin-right: .4rem;
+}
+
+/* Responsive */
+@media(max-width: 768px) {
+  .miles-morales-header h2 { font-size: 1.8rem; }
+  .miles-morales-grid { gap: 1rem; }
+  .miles-morales-info p { font-size: .9rem; }
+}
+
 
       .recommendations {
         margin-top: 50px;
@@ -597,7 +742,7 @@
 
       .skill .level {
         font-size: 1rem;
-        color: #ff4cc3;
+        color: #ff0037;
         margin-top: 5px;
         font-weight: bold;
         background: rgba(255, 76, 186, 0.2);
@@ -739,7 +884,7 @@
 
       .company:hover {
         transform: translateY(-10px);
-        box-shadow: 0 0 20px #ff4c97;
+        box-shadow: 0 0 20px #ff0037;
       }
 
       .company img {
@@ -755,6 +900,76 @@
         color: #fff;
         font-weight: bold;
       }
+
+      .myproj-section {
+  background-color: #0e0e0e;
+  color: #fff;
+  padding: 60px 20px;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+}
+
+.myproj-title {
+  font-size: 2.5rem;
+  color: #ff0037; /* pink accent */
+  margin-bottom: 40px;
+  text-shadow: 0 0 10px #ff0037;
+}
+
+.myproj-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.myproj-card {
+  position: relative;
+  width: 300px;
+  height: 400px;
+  overflow: hidden;
+  border-radius: 15px;
+  box-shadow: 0 0 20px #ff0037;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.myproj-card:hover {
+  transform: scale(1.05);
+}
+
+.myproj-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.myproj-info {
+  position: absolute;
+  bottom: 0;
+  background: rgba(0,0,0,0.8);
+  color: #fff;
+  width: 100%;
+  padding: 20px;
+  transform: translateY(100%);
+  transition: transform 0.3s;
+}
+
+.myproj-card:hover .myproj-info {
+  transform: translateY(0);
+}
+
+.myproj-info h3 {
+  color: #ff69b4;
+  margin-bottom: 10px;
+}
+
+.myproj-info p {
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
       /* My Designs Section */
       .my-designs-section {
         padding: 50px 20px;
@@ -795,7 +1010,7 @@
 
       .design-card:hover {
         transform: scale(1.05);
-        box-shadow: 0 0 25px rgba(255, 76, 160, 0.9);
+        box-shadow: 0 0 25px rgba(255, 0, 119, 0.9);
       }
 
       .design-card img {
@@ -870,6 +1085,74 @@
         margin-bottom: 0;
         color: #fff;
       }
+.features-section {
+  background: #0e0e0e;
+  color: #fff;
+  padding: 80px 20px;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+}
+
+.features-title {
+  font-size: 2.5rem;
+  color: #ff69b4;
+  margin-bottom: 10px;
+  text-shadow: 0 0 15px #ff69b4;
+}
+
+.features-subtitle {
+  font-size: 1.2rem;
+  margin-bottom: 50px;
+  color: #aaa;
+}
+
+.features-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
+  justify-items: center;
+}
+
+.feature-card {
+  background: #1a1a1a;
+  border-radius: 20px;
+  padding: 30px 20px;
+  width: 220px;
+  box-shadow: 0 0 20px rgba(255, 105, 180, 0.4);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  cursor: pointer;
+  opacity: 0;
+  transform: translateY(40px);
+}
+
+.feature-card i {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+  color: #ff69b4;
+  text-shadow: 0 0 15px #ff69b4;
+}
+
+.feature-card h3 {
+  margin-bottom: 10px;
+  color: #ff69b4;
+}
+
+.feature-card p {
+  font-size: 0.95rem;
+  color: #ddd;
+}
+
+/* Hover effect */
+.feature-card:hover {
+  transform: scale(1.1) rotate(2deg);
+  box-shadow: 0 0 35px #ff69b4;
+}
+
+/* Scroll animation */
+.feature-card.show {
+  opacity: 1;
+  transform: translateY(0);
+}
 
       /* Footer Styling */
       footer {
@@ -1079,7 +1362,7 @@
             <img src="sedrude.jpg" alt="Construction Company 3" />
             <span>Sedrude Pty Ltd</span>
           </div>
-           <div class="company">
+            <div class="company">
             <img src="shisanyama.jpg" alt="Construction Company 3" />
             <span>Centurion Shisanyama</span>
           </div>
@@ -1089,6 +1372,43 @@
           </div>
         </div>
       </section>
+
+      <section id="frontend" class="frontend-section">
+  <h2 class="section-title">Frontend Development</h2>
+  <div class="apps-container">
+    <div class="app-card">
+      <img src="app1.png" alt="App 1 Screenshot">
+      <h3>App One</h3>
+      <a href="https://demo1.com" target="_blank" class="demo-btn">View Demo</a>
+    </div>
+    <div class="app-card">
+      <img src="app2.png" alt="App 2 Screenshot">
+      <h3>App Two</h3>
+      <a href="https://demo2.com" target="_blank" class="demo-btn">View Demo</a>
+    </div>
+    <div class="app-card">
+      <img src="app3.png" alt="App 3 Screenshot">
+      <h3>App Three</h3>
+      <a href="https://demo3.com" target="_blank" class="demo-btn">View Demo</a>
+    </div>
+    <div class="app-card">
+      <img src="app4.png" alt="App 4 Screenshot">
+      <h3>App Four</h3>
+      <a href="https://demo4.com" target="_blank" class="demo-btn">View Demo</a>
+    </div>
+    <div class="app-card">
+      <img src="app5.png" alt="App 5 Screenshot">
+      <h3>App Five</h3>
+      <a href="https://demo5.com" target="_blank" class="demo-btn">View Demo</a>
+    </div>
+    <div class="app-card">
+      <img src="app6.png" alt="App 6 Screenshot">
+      <h3>App Six</h3>
+      <a href="https://demo6.com" target="_blank" class="demo-btn">View Demo</a>
+    </div>
+  </div>
+</section>
+
 
       
 
@@ -1108,12 +1428,43 @@
           <img src="logo2.jpg" alt="Logo Design 2" />
           <img src="moek.jpg" alt="Logo Design 3" />
           <img src="setlavox.jpg" alt="Logo Design 4" />
-           <img src="TIGRAWAY.jpg" alt="Logo Design 5" />
+          <img src="TIGRAWAY.jpg" alt="Logo Design 5" />
            <img src="cupizone.jpg" alt="Logo Design 6" />
             <img src="tolocare.jpg" alt="Logo Design 7" />
             <img src="HOPE LAND.jpg" alt="Logo Design 8" />
         </div>
       </section>
+
+<section id="projects" class="myproj-section">
+  <h2 class="myproj-title">My Projects</h2>
+  <div class="myproj-container">
+    <div class="myproj-card">
+      <img src="illustration.jpg" alt="Project 1 Illustration">
+      <div class="myproj-info">
+        <h3>Charactor design</h3>
+        <p>Each expression is bringing this animation to life
+            designed with Photoshop and Indesign
+        </p>
+      </div>
+    </div>
+    <div class="myproj-card">
+      <img src="COVER.jpg" alt="Project 2 Illustration">
+      <div class="myproj-info">
+        <h3>Album cover by Photoshop</h3>
+        <p>technologies used:Photoshop</p>
+      </div>
+    </div>
+    <div class="myproj-card">
+      <img src="project3.png" alt="Project 3 Illustration">
+      <div class="myproj-info">
+        <h3>Project Three</h3>
+        <p>Brief info about the project, technologies used, and purpose.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
 
       <!-- Certificates Section -->
       <section class="certificates-section">
@@ -1186,6 +1537,85 @@
           </div>
         </div>
       </section>
+
+      <section id="miles-morales" class="miles-morales-section">
+  <div class="miles-morales-header">
+    <h2>Miles Morales Motion Video</h2>
+    <p>A motion design project created using Blender and Photoshop, showcasing animation, lighting, and compositing skills.</p>
+  </div>
+
+  <div class="miles-morales-grid">
+    <!-- Video 1 -->
+    <div class="miles-morales-item">
+      <video controls muted loop>
+        <source src="milesvid.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <div class="miles-morales-info">
+        <h3>Animation Preview</h3>
+        <p>This is a preview of the motion animation sequence. Smooth transitions and dynamic camera angles highlight the key movements.</p>
+      </div>
+    </div>
+
+    <!-- Video 2 -->
+    <div class="miles-morales-item">
+      <video controls muted loop>
+        <source src="designvidmiles.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <div class="miles-morales-info">
+        <h3>Close-Up Motion Details</h3>
+        <p>Focus on the character details, lighting effects, and color grading that bring Miles Morales to life.</p>
+      </div>
+    </div>
+
+    <!-- Final Product Image -->
+    <div class="miles-morales-item final-image">
+      <img src="final product miles.jpg" alt="Miles Morales Motion Final Product">
+      <div class="miles-morales-info">
+        <h3>Final Product</h3>
+        <p>The final render showcasing the completed motion video project. Designed and edited in Blender & Photoshop.</p>
+        <div class="miles-morales-tools">
+          <span class="miles-morales-tool">Blender</span>
+          <span class="miles-morales-tool">Photoshop</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+      <section id="features" class="features-section">
+  <h2 class="features-title">Why Work With Me</h2>
+  <p class="features-subtitle">Here are some cool things I bring to every project:</p>
+  
+  <div class="features-container">
+    <div class="feature-card">
+      <i class="fas fa-magic"></i>
+      <h3>Creative Design</h3>
+      <p>Unique, eye-catching designs with a modern touch.</p>
+    </div>
+    
+    <div class="feature-card">
+      <i class="fas fa-mobile-alt"></i>
+      <h3>Responsive</h3>
+      <p>Looks great on desktops, tablets, and phones.</p>
+    </div>
+    
+    <div class="feature-card">
+      <i class="fas fa-code"></i>
+      <h3>Clean Code</h3>
+      <p>Organized and efficient code for smooth performance.</p>
+    </div>
+    
+    <div class="feature-card">
+      <i class="fas fa-bolt"></i>
+      <h3>Interactive</h3>
+      <p>Animations and effects that make the experience fun.</p>
+    </div>
+  </div>
+</section>
+
 
       <!-- Repositories Section -->
       <section class="repos-section">
@@ -1315,52 +1745,53 @@
     <footer>
       <p>&copy; 2024 Lethabo Semenya | All rights reserved.</p>
     </footer>
+<!-- JavaScript -->
+<script>
+  // Get the back-to-top button
+  const backToTopButton = document.getElementById("backToTop");
 
-    <!-- JavaScript -->
-    <script>
-      // Get the back-to-top button
-      const backToTopButton = document.getElementById("backToTop");
+  // Show the button when the user scrolls down
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 300) {
+      backToTopButton.classList.add("show");
+    } else {
+      backToTopButton.classList.remove("show");
+    }
+  });
 
-      // Show the button when the user scrolls down
-      window.addEventListener("scroll", () => {
-        if (window.scrollY > 300) {
-          backToTopButton.classList.add("show");
-        } else {
-          backToTopButton.classList.remove("show");
-        }
+  document.addEventListener("DOMContentLoaded", () => {
+    const images = document.querySelectorAll(".threeD-container span");
+    const totalImages = images.length;
+    const angle = 360 / totalImages;
+    const radius = window.innerWidth < 768 ? 200 : 300; // Responsive radius
+
+    images.forEach((img, index) => {
+      const rotation = angle * index;
+      img.style.transform = `rotateY(${rotation}deg) translateZ(${radius}px)`;
+    });
+
+    // Update on resize
+    window.addEventListener("resize", () => {
+      const newRadius = window.innerWidth < 768 ? 200 : 300;
+      images.forEach((img, index) => {
+        const rotation = angle * index;
+        img.style.transform = `rotateY(${rotation}deg) translateZ(${newRadius}px)`;
       });
+    });
+  });
 
-      document.addEventListener("DOMContentLoaded", () => {
-        const images = document.querySelectorAll(".threeD-container span");
-        const totalImages = images.length;
-        const angle = 360 / totalImages;
-        const radius = window.innerWidth < 768 ? 200 : 300; // Responsive radius
+  // Scroll to the top when the button is clicked
+  backToTopButton.addEventListener("click", () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  });
+</script>
 
-        images.forEach((img, index) => {
-          const rotation = angle * index;
-          img.style.transform = `rotateY(${rotation}deg) translateZ(${radius}px)`;
-        });
-
-        // Update on resize
-        window.addEventListener("resize", () => {
-          const newRadius = window.innerWidth < 768 ? 200 : 300;
-          images.forEach((img, index) => {
-            const rotation = angle * index;
-            img.style.transform = `rotateY(${rotation}deg) translateZ(${newRadius}px)`;
-          });
-        });
-      });
-
-      // Scroll to the top when the button is clicked
-      backToTopButton.addEventListener("click", () => {
-        window.scrollTo({
-          top: 0,
-          behavior: "smooth",
-        });
-      });
-    </script>
   </body>
 </html>
+
 
 
 
